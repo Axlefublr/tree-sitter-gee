@@ -13,9 +13,16 @@ export default grammar({
   extras: _ => [],
 
   conflicts: $ => [
+    [$.underline, $._stray],
+    [$.strikethrough, $._stray_in_underline],
+    [$.strikethrough, $._stray],
+    [$.bold, $._stray_in_underline],
+    [$.bold, $._stray_in_strikethrough],
     [$.bold, $._stray],
-    [$.italic, $._stray],
+    [$.italic, $._stray_in_underline],
+    [$.italic, $._stray_in_strikethrough],
     [$.italic, $._stray_in_bold],
+    [$.italic, $._stray],
   ],
 
   rules: {
@@ -44,22 +51,32 @@ export default grammar({
     // you cannot double bold something, you'll just end up with two stray `*` on each side, with a plain word on the inside
     // (the above is the intention, at least)
 
-    _word_bold:   $ => choice($.italic, repeat1(choice($._stray_in_bold, $._plain))),
-    _word_italic: $ =>                  repeat1(choice($._raw_in_italic, $._plain)),
-    _word: $ => choice($.italic, $.bold, $._plain, $._stray),
+    _word_underline: $ => choice($.italic, $.bold, $.strikethrough, repeat1(choice($._stray_in_underline, $._plain))),
+    _word_strikethrough: $ => choice($.italic, $.bold, repeat1(choice($._stray_in_strikethrough, $._raw_in_strikethrough, $._plain))),
+    _word_bold: $ => choice($.italic, repeat1(choice($._stray_in_bold, $._raw_in_bold, $._plain))),
+    _word_italic: $ => repeat1(choice($._raw_in_italic, $._plain)),
+    _word: $ => choice($.italic, $.bold, $.strikethrough, $.underline, $._plain, $._stray),
 
-    inner_bold:   $ => seq($._word_bold,   repeat(seq($._space, $._word_bold))),
-    inner_italic: $ => seq($._word_italic, repeat(seq($._space, $._word_italic))),
+    inner_underline:       $ => seq($._word_underline, repeat(seq($._space, $._word_underline))),
+    inner_strikethrough:   $ => seq($._word_strikethrough, repeat(seq($._space, $._word_strikethrough))),
+    inner_bold:            $ => seq($._word_bold,   repeat(seq($._space, $._word_bold))),
+    inner_italic:          $ => seq($._word_italic, repeat(seq($._space, $._word_italic))),
 
-    bold:   $ => prec.dynamic(10, seq('*', $.inner_bold, '*')),
-    italic: $ => prec.dynamic(1, seq('/', $.inner_italic, '/')),
+    underline:       $ => prec.dynamic(1, seq('_', $.inner_underline, '_')),
+    strikethrough:   $ => prec.dynamic(1, seq('~', $.inner_strikethrough, '~')),
+    bold:            $ => prec.dynamic(1, seq('*', $.inner_bold, '*')),
+    italic:          $ => prec.dynamic(1, seq('/', $.inner_italic, '/')),
 
-    _raw_in_italic: _ => '*',
+    _raw_in_strikethrough: _ => '_',
+    _raw_in_bold: _ => choice('~', '_'),
+    _raw_in_italic: _ => choice('*', '~', '_'),
 
+    _stray_in_underline: _ => choice('/', '*', '~'),
+    _stray_in_strikethrough: _ => choice('/', '*'),
     _stray_in_bold: _ => '/',
 
-    _stray: _ => choice('/', '*'),
-    _plain: _ => /[^\s/*]+/,
+    _stray: _ => choice('/', '*', '~', '_'),
+    _plain: _ => /[^\s/*~_]+/,
 
     _separator: _ => /(([ \t]*)\n)+/,
     _newline: _ => "\n",

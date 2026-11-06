@@ -1,0 +1,206 @@
+======
+Bold italic
+======
+word */bold/* word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (bold
+        (inner_bold
+          (italic
+            (inner_italic)))))))
+
+======
+Bold italic stray
+======
+word */bold* word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (bold
+        (inner_bold)))))
+======
+Bold italic stray inside
+======
+word *bo/ld* word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (bold
+        (inner_bold)))))
+======
+Bold italic mix
+======
+word *word /word* word/ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (bold
+        (inner_bold)))))
+======
+Strike bold
+======
+word ~*bold*~ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (strikethrough
+        (inner_strikethrough
+          (bold
+            (inner_bold)))))))
+
+======
+Strike bold stray
+======
+word ~*bold~ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (strikethrough
+        (inner_strikethrough)))))
+======
+Strike bold stray inside
+======
+word ~bo*ld~ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (strikethrough
+        (inner_strikethrough)))))
+======
+Strike bold mix
+======
+word ~word *word~ word* word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (strikethrough
+        (inner_strikethrough)))))
+======
+Strike italic
+======
+word ~/italic/~ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (strikethrough
+        (inner_strikethrough
+          (italic
+            (inner_italic)))))))
+
+======
+Strike italic stray
+======
+word ~/italic~ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (strikethrough
+        (inner_strikethrough)))))
+======
+Strike italic stray inside
+======
+word ~bo/ld~ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (strikethrough
+        (inner_strikethrough)))))
+======
+Strike italic mix
+======
+word ~word /word~ word/ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (strikethrough
+        (inner_strikethrough)))))
+
+
+======
+Underline bold
+======
+word _*bold*_ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (underline
+        (inner_underline
+          (bold
+            (inner_bold)))))))
+
+======
+Underline bold stray
+======
+word _*bold_ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (underline
+        (inner_underline)))))
+======
+Underline bold stray inside
+======
+word _bo*ld_ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (underline
+        (inner_underline)))))
+======
+Underline bold mix
+======
+word _word *word_ word* word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (underline
+        (inner_underline)))))
