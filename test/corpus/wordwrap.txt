@@ -1,0 +1,53 @@
+======
+Italic
+======
+word /italic/ word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (italic
+        (inner_italic)))))
+
+======
+Bold
+======
+word *bold* word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (bold
+        (inner_bold)))))
+
+======
+Bold italic
+======
+word */bold/* word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (bold
+        (inner_bold
+          (italic
+            (inner_italic)))))))
+
+======
+Bold italic stray
+======
+word */bold* word
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (bold
+        (inner_bold)))))
