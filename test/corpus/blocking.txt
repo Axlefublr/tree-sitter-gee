@@ -1,0 +1,89 @@
+==========
+Two blocks
+==========
+mount tremendous incorporate
+funny behavioral thinking
+
+secrets beverage combining
+metadata diffs ocean
+
+---
+
+(source_file
+  (paragraph
+    (line)
+    (line))
+  (paragraph
+    (line)
+    (line)))
+
+==========
+Leading newline
+==========
+
+mount tremendous incorporate
+funny behavioral thinking
+
+---
+
+(source_file
+  (paragraph
+    (line)
+    (line)))
+
+==========
+Leading 2 newlines
+==========
+
+
+mount tremendous incorporate
+funny behavioral thinking
+
+---
+
+(source_file
+  (paragraph
+    (line)
+    (line)))
+
+==========
+Leading spaces
+==========
+
+
+      mount tremendous incorporate
+funny behavioral thinking
+
+---
+
+(source_file
+  (paragraph
+    (line)
+    (line)))
+
+==========
+Trailing newline
+==========
+mount tremendous incorporate
+funny behavioral thinking
+
+---
+
+(source_file
+  (paragraph
+    (line)
+    (line)))
+
+==========
+Trailing 2 newlines
+==========
+mount tremendous incorporate
+funny behavioral thinking
+
+
+---
+
+(source_file
+  (paragraph
+    (line)
+    (line)))
