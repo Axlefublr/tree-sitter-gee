@@ -1,5 +1,5 @@
 =======
-Heading
+heading
 =======
 # heading
 phillips assembly
@@ -17,7 +17,7 @@ approaches hierarchy
         (line)))))
 
 =======
-Heading level 2
+heading level 2
 =======
 ## heading
 phillips assembly
@@ -35,7 +35,7 @@ approaches hierarchy
         (line)))))
 
 =======
-Heading level 2 in 1
+heading level 2 in 1
 =======
 # heading
 aging filme
@@ -61,7 +61,7 @@ approaches hierarchy
             (line)))))))
 
 =======
-Heading level 2 in 1 no between
+heading level 2 in 1 no between
 =======
 # heading
 ## heading
@@ -84,7 +84,7 @@ approaches hierarchy
             (line)))))))
 
 =======
-Heading unnamed
+heading unnamed
 =======
 ━
 phillips assembly
@@ -102,7 +102,7 @@ approaches hierarchy
         (line)))))
 
 =======
-Heading unnamed level 2
+heading unnamed level 2
 =======
 ━━
 phillips assembly
@@ -120,7 +120,7 @@ approaches hierarchy
         (line)))))
 
 =======
-Heading two blocks
+heading two blocks
 =======
 # heading
 phillips assembly
@@ -140,7 +140,7 @@ approaches hierarchy
         (line)))))
 
 =======
-block and Heading two blocks
+block and heading two blocks
 =======
 im a block
 # heading
@@ -163,7 +163,7 @@ approaches hierarchy
         (line)))))
 
 =======
-Heading 1 > 2 > 3 then 1 > 3
+heading 1 with 2 with 3 with block and heading 1 with 3 with block
 =======
 obvious belle
 # heading

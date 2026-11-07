@@ -1,56 +1,46 @@
 ======
-Bold italic
+bold italic
 ======
-word */bold/* word
+word _*bold*_ word
 
 ---
 
 (source_file
   (paragraph
     (line
-      (bold
-        (inner_bold
-          (italic
-            (inner_italic)))))))
+      (italic
+        (inner_italic
+          (bold
+            (inner_bold)))))))
 
 ======
-Bold italic stray
+italic bold stray
 ======
-word */bold* word
-
----
-
-(source_file
-  (paragraph
-    (line
-      (bold
-        (inner_bold)))))
-======
-Bold italic stray inside
-======
-word *bo/ld* word
+word _*bold_ word
 
 ---
 
 (source_file
   (paragraph
     (line
-      (bold
-        (inner_bold)))))
+      (italic
+        (inner_italic)))))
+
 ======
-Bold italic mix
+italic bold stray inside
 ======
-word *word /word* word/ word
+word _bo*ld_ word
 
 ---
 
 (source_file
   (paragraph
     (line
-      (bold
-        (inner_bold)))))
+      (italic
+        (inner_italic)))))
+
 ======
-Strike bold
+strike bold
 ======
 word ~*bold*~ word
 
@@ -65,7 +55,7 @@ word ~*bold*~ word
             (inner_bold)))))))
 
 ======
-Strike bold stray
+strike bold stray
 ======
 word ~*bold~ word
 
@@ -76,8 +66,9 @@ word ~*bold~ word
     (line
       (strikethrough
         (inner_strikethrough)))))
+
 ======
-Strike bold stray inside
+strike bold stray inside
 ======
 word ~bo*ld~ word
 
@@ -88,8 +79,9 @@ word ~bo*ld~ word
     (line
       (strikethrough
         (inner_strikethrough)))))
+
 ======
-Strike bold mix
+strike bold mix
 ======
 word ~word *word~ word* word
 
@@ -100,107 +92,98 @@ word ~word *word~ word* word
     (line
       (strikethrough
         (inner_strikethrough)))))
+
 ======
-Strike italic
+italic strike
 ======
-word ~/italic/~ word
+word _~italic~_ word
 
 ---
 
 (source_file
   (paragraph
     (line
-      (strikethrough
-        (inner_strikethrough
-          (italic
-            (inner_italic)))))))
+      (italic
+        (inner_italic
+          (strikethrough
+            (inner_strikethrough)))))))
 
 ======
-Strike italic stray
+italic strike stray
 ======
-word ~/italic~ word
+word _~italic_ word
 
 ---
 
 (source_file
   (paragraph
     (line
-      (strikethrough
-        (inner_strikethrough)))))
+      (italic
+        (inner_italic)))))
+
 ======
-Strike italic stray inside
+italic strike stray inside
 ======
-word ~bo/ld~ word
+word _bo~ld_ word
 
 ---
 
 (source_file
   (paragraph
     (line
-      (strikethrough
-        (inner_strikethrough)))))
-======
-Strike italic mix
-======
-word ~word /word~ word/ word
+      (italic
+        (inner_italic)))))
+
+===============
+italic mix bold inner wins
+===============
+word _occu*driven*pation_
 
 ---
 
 (source_file
   (paragraph
     (line
-      (strikethrough
-        (inner_strikethrough)))))
+      (bold
+        (inner_bold)))))
 
-
-======
-Underline bold
-======
-word _*bold*_ word
+===============
+bold mix italic inner wins
+===============
+word *occu_driven_pation*
 
 ---
 
 (source_file
   (paragraph
     (line
-      (underline
-        (inner_underline
+      (italic
+        (inner_italic)))))
+
+===============
+italic mix bold both win
+===============
+word _occu *driven* pation_
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (italic
+        (inner_italic
           (bold
             (inner_bold)))))))
 
-======
-Underline bold stray
-======
-word _*bold_ word
+===============
+bold mix italic italic invalid
+===============
+word *occu _driven_ pation*
 
 ---
 
 (source_file
   (paragraph
     (line
-      (underline
-        (inner_underline)))))
-======
-Underline bold stray inside
-======
-word _bo*ld_ word
-
----
-
-(source_file
-  (paragraph
-    (line
-      (underline
-        (inner_underline)))))
-======
-Underline bold mix
-======
-word _word *word_ word* word
-
----
-
-(source_file
-  (paragraph
-    (line
-      (underline
-        (inner_underline)))))
+      (italic
+        (inner_italic)))))

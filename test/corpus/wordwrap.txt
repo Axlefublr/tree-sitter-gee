@@ -1,7 +1,7 @@
 ======
-Italic
+italic
 ======
-word /italic/ word
+word _italic_ word
 
 ---
 
@@ -12,7 +12,7 @@ word /italic/ word
         (inner_italic)))))
 
 ======
-Bold
+bold
 ======
 word *bold* word
 
@@ -25,7 +25,7 @@ word *bold* word
         (inner_bold)))))
 
 ======
-Strikethrough
+strikethrough
 ======
 word ~strikethrough~ word
 
