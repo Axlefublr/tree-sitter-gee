@@ -15,6 +15,25 @@
     }
   },
   {
+    "type": "code",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "inner_code",
+          "named": true
+        },
+        {
+          "type": "language_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "inner_bold",
     "named": true,
     "fields": {},
@@ -28,6 +47,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "inner_code",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "inner_italic",
@@ -101,6 +125,10 @@
       "types": [
         {
           "type": "bold",
+          "named": true
+        },
+        {
+          "type": "code",
           "named": true
         },
         {
@@ -194,6 +222,14 @@
   {
     "type": "_",
     "named": false
+  },
+  {
+    "type": "`",
+    "named": false
+  },
+  {
+    "type": "language_name",
+    "named": true
   },
   {
     "type": "~",

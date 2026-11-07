@@ -1,0 +1,65 @@
+====
+Code
+====
+agenda `seattle` montreal
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (code
+        (inner_code)))))
+
+====
+Code empty
+====
+agenda `` montreal *bold*
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (code)
+      (bold
+        (inner_bold)))))
+
+====
+Code stray
+====
+agenda `seattle montreal
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (code
+        (inner_code)))))
+
+====
+Code tries bold
+====
+agenda `sea *bold* ttle` montreal
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (code
+        (inner_code)))))
+
+====
+Bold tries code
+====
+agenda *sea `bold` ttle* montreal
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (code
+        (inner_code)))))

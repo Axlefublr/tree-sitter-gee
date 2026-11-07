@@ -13,6 +13,7 @@ export default grammar({
   extras: _ => [],
 
   conflicts: $ => [
+    // [$.code],
     [$.underline, $._stray],
     [$.strikethrough, $._stray_in_underline],
     [$.strikethrough, $._stray],
@@ -55,17 +56,24 @@ export default grammar({
     _word_strikethrough: $ => choice($.italic, $.bold, repeat1(choice($._stray_in_strikethrough, $._raw_in_strikethrough, $._plain))),
     _word_bold: $ => choice($.italic, repeat1(choice($._stray_in_bold, $._raw_in_bold, $._plain))),
     _word_italic: $ => repeat1(choice($._raw_in_italic, $._plain)),
-    _word: $ => choice($.italic, $.bold, $.strikethrough, $.underline, $._plain, $._stray),
+    _word: $ => choice($.italic, $.bold, $.strikethrough, $.underline, $.code, $._plain, $._stray),
 
+    inner_code:            $ => $._plain_code,
     inner_underline:       $ => seq($._word_underline, repeat(seq($._space, $._word_underline))),
     inner_strikethrough:   $ => seq($._word_strikethrough, repeat(seq($._space, $._word_strikethrough))),
     inner_bold:            $ => seq($._word_bold,   repeat(seq($._space, $._word_bold))),
     inner_italic:          $ => seq($._word_italic, repeat(seq($._space, $._word_italic))),
 
+    code: $ => prec.right(1, seq('`', choice(
+      optional(seq('`', optional($.language_name))),
+      seq($.inner_code, optional(seq('`', optional($.language_name))))
+    ))),
     underline:       $ => prec.dynamic(1, seq('_', $.inner_underline, '_')),
     strikethrough:   $ => prec.dynamic(1, seq('~', $.inner_strikethrough, '~')),
     bold:            $ => prec.dynamic(1, seq('*', $.inner_bold, '*')),
     italic:          $ => prec.dynamic(1, seq('/', $.inner_italic, '/')),
+
+    language_name: _ => /[a-z]+/,
 
     _raw_in_strikethrough: _ => '_',
     _raw_in_bold: _ => choice('~', '_'),
@@ -75,8 +83,9 @@ export default grammar({
     _stray_in_strikethrough: _ => choice('/', '*'),
     _stray_in_bold: _ => '/',
 
-    _stray: _ => choice('/', '*', '~', '_'),
-    _plain: _ => /[^\s/*~_]+/,
+    _stray: _ => choice('/', '*', '~', '_', '`'),
+    _plain_code: _ => /[^\n`]+/,
+    _plain: _ => /[^\s/*~`_]+/,
 
     _separator: _ => /(([ \t]*)\n)+/,
     _newline: _ => "\n",
