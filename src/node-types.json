@@ -529,7 +529,7 @@
     }
   },
   {
-    "type": "line",
+    "type": "paragraph",
     "named": true,
     "fields": {},
     "children": {
@@ -554,21 +554,6 @@
         },
         {
           "type": "strikethrough",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "paragraph",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "line",
           "named": true
         }
       ]

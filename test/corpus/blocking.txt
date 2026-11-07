@@ -10,12 +10,8 @@ metadata diffs ocean
 ---
 
 (source_file
-  (paragraph
-    (line)
-    (line))
-  (paragraph
-    (line)
-    (line)))
+  (paragraph)
+  (paragraph))
 
 ==========
 leading newline
@@ -27,9 +23,7 @@ funny behavioral thinking
 ---
 
 (source_file
-  (paragraph
-    (line)
-    (line)))
+  (paragraph))
 
 ==========
 leading 2 newlines
@@ -42,9 +36,7 @@ funny behavioral thinking
 ---
 
 (source_file
-  (paragraph
-    (line)
-    (line)))
+  (paragraph))
 
 ==========
 leading indentation
@@ -57,9 +49,7 @@ funny behavioral thinking
 ---
 
 (source_file
-  (paragraph
-    (line)
-    (line)))
+  (paragraph))
 
 ==========
 trailing newline
@@ -70,9 +60,7 @@ funny behavioral thinking
 ---
 
 (source_file
-  (paragraph
-    (line)
-    (line)))
+  (paragraph))
 
 ==========
 trailing 2 newlines
@@ -84,6 +72,4 @@ funny behavioral thinking
 ---
 
 (source_file
-  (paragraph
-    (line)
-    (line)))
+  (paragraph))

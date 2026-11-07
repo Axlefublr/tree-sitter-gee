@@ -7,11 +7,10 @@ word _*bold*_ word
 
 (source_file
   (paragraph
-    (line
-      (italic
-        (inner_italic
-          (bold
-            (inner_bold)))))))
+    (italic
+      (inner_italic
+        (bold
+          (inner_bold))))))
 
 ======
 italic bold stray
@@ -22,9 +21,8 @@ word _*bold_ word
 
 (source_file
   (paragraph
-    (line
-      (italic
-        (inner_italic)))))
+    (italic
+      (inner_italic))))
 
 ======
 italic bold stray inside
@@ -35,9 +33,8 @@ word _bo*ld_ word
 
 (source_file
   (paragraph
-    (line
-      (italic
-        (inner_italic)))))
+    (italic
+      (inner_italic))))
 
 ======
 strike bold
@@ -48,11 +45,10 @@ word ~*bold*~ word
 
 (source_file
   (paragraph
-    (line
-      (strikethrough
-        (inner_strikethrough
-          (bold
-            (inner_bold)))))))
+    (strikethrough
+      (inner_strikethrough
+        (bold
+          (inner_bold))))))
 
 ======
 strike bold stray
@@ -63,9 +59,8 @@ word ~*bold~ word
 
 (source_file
   (paragraph
-    (line
-      (strikethrough
-        (inner_strikethrough)))))
+    (strikethrough
+      (inner_strikethrough))))
 
 ======
 strike bold stray inside
@@ -76,9 +71,8 @@ word ~bo*ld~ word
 
 (source_file
   (paragraph
-    (line
-      (strikethrough
-        (inner_strikethrough)))))
+    (strikethrough
+      (inner_strikethrough))))
 
 ======
 italic strike
@@ -89,11 +83,10 @@ word _~italic~_ word
 
 (source_file
   (paragraph
-    (line
-      (italic
-        (inner_italic
-          (strikethrough
-            (inner_strikethrough)))))))
+    (italic
+      (inner_italic
+        (strikethrough
+          (inner_strikethrough))))))
 
 ======
 italic strike stray
@@ -104,9 +97,8 @@ word _~italic_ word
 
 (source_file
   (paragraph
-    (line
-      (italic
-        (inner_italic)))))
+    (italic
+      (inner_italic))))
 
 ======
 italic strike stray inside
@@ -117,9 +109,8 @@ word _bo~ld_ word
 
 (source_file
   (paragraph
-    (line
-      (italic
-        (inner_italic)))))
+    (italic
+      (inner_italic))))
 
 ===============
 italic mix bold both win
@@ -130,11 +121,10 @@ word _occu *driven* pation_
 
 (source_file
   (paragraph
-    (line
-      (italic
-        (inner_italic
-          (bold
-            (inner_bold)))))))
+    (italic
+      (inner_italic
+        (bold
+          (inner_bold))))))
 
 ===============
 bold mix italic italic invalid
@@ -145,6 +135,5 @@ word *occu _driven_ pation*
 
 (source_file
   (paragraph
-    (line
-      (italic
-        (inner_italic)))))
+    (italic
+      (inner_italic))))

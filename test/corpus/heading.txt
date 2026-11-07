@@ -12,9 +12,7 @@ approaches hierarchy
     (heading1_header
       (heading_title))
     (heading1_contents
-      (paragraph
-        (line)
-        (line)))))
+      (paragraph))))
 
 =======
 heading level 2
@@ -30,9 +28,7 @@ approaches hierarchy
     (heading2_header
       (heading_title))
     (heading2_contents
-      (paragraph
-        (line)
-        (line)))))
+      (paragraph))))
 
 =======
 heading level 2 in 1
@@ -50,15 +46,12 @@ approaches hierarchy
     (heading1_header
       (heading_title))
     (heading1_contents
-      (paragraph
-        (line))
+      (paragraph)
       (heading2
         (heading2_header
           (heading_title))
         (heading2_contents
-          (paragraph
-            (line)
-            (line)))))))
+          (paragraph))))))
 
 =======
 heading level 2 in 1 no between
@@ -79,9 +72,7 @@ approaches hierarchy
         (heading2_header
           (heading_title))
         (heading2_contents
-          (paragraph
-            (line)
-            (line)))))))
+          (paragraph))))))
 
 =======
 heading unnamed
@@ -97,9 +88,7 @@ approaches hierarchy
     (heading1_header
       (heading1_line))
     (heading1_contents
-      (paragraph
-        (line)
-        (line)))))
+      (paragraph))))
 
 =======
 heading unnamed level 2
@@ -115,9 +104,7 @@ approaches hierarchy
     (heading2_header
       (heading2_line))
     (heading2_contents
-      (paragraph
-        (line)
-        (line)))))
+      (paragraph))))
 
 =======
 heading two blocks
@@ -134,10 +121,8 @@ approaches hierarchy
     (heading1_header
       (heading_title))
     (heading1_contents
-      (paragraph
-        (line))
-      (paragraph
-        (line)))))
+      (paragraph)
+      (paragraph))))
 
 =======
 block and heading two blocks
@@ -151,16 +136,13 @@ approaches hierarchy
 ---
 
 (source_file
-  (paragraph
-    (line))
+  (paragraph)
   (heading1
     (heading1_header
       (heading_title))
     (heading1_contents
-      (paragraph
-        (line))
-      (paragraph
-        (line)))))
+      (paragraph)
+      (paragraph))))
 
 =======
 heading 1 with 2 with 3 with block and heading 1 with 3 with block
@@ -178,8 +160,7 @@ monroe installing
 ---
 
 (source_file
-  (paragraph
-    (line))
+  (paragraph)
   (heading1
     (heading1_header
       (heading_title))
@@ -192,9 +173,7 @@ monroe installing
             (heading3_header
               (heading_title))
             (heading3_contents
-              (paragraph
-                (line)
-                (line))))))))
+              (paragraph)))))))
   (heading1
     (heading1_header
       (heading_title))
@@ -203,5 +182,4 @@ monroe installing
         (heading3_header
           (heading_title))
         (heading3_contents
-          (paragraph
-            (line)))))))
+          (paragraph))))))

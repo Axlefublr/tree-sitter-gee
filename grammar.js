@@ -60,9 +60,9 @@ export default grammar({
 
     inner_codeblock: $ => repeat1(seq($._anything, $._newline)),
 
-    paragraph: $ => prec.right(repeat1($.line)),
+    paragraph: $ => prec.right(repeat1($._line)),
 
-    line: $ => seq(
+    _line: $ => seq(
       repeat1(choice($._space, $._word)),
       $._newline
     ),

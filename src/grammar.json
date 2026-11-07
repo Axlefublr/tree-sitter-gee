@@ -771,11 +771,11 @@
         "type": "REPEAT1",
         "content": {
           "type": "SYMBOL",
-          "name": "line"
+          "name": "_line"
         }
       }
     },
-    "line": {
+    "_line": {
       "type": "SEQ",
       "members": [
         {

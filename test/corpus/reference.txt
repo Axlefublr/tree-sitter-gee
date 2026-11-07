@@ -7,9 +7,8 @@ agenda «seattle» montreal
 
 (source_file
   (paragraph
-    (line
-      (reference
-        (inner_reference)))))
+    (reference
+      (inner_reference))))
 
 ====
 reference empty
@@ -20,10 +19,9 @@ agenda «» montreal *bold*
 
 (source_file
   (paragraph
-    (line
-      (reference)
-      (bold
-        (inner_bold)))))
+    (reference)
+    (bold
+      (inner_bold))))
 
 ====
 reference stray
@@ -34,9 +32,8 @@ agenda «seattle montreal
 
 (source_file
   (paragraph
-    (line
-      (reference
-        (inner_reference)))))
+    (reference
+      (inner_reference))))
 
 ====
 reference tries code
@@ -47,9 +44,8 @@ agenda «sea `bold` ttle» montreal
 
 (source_file
   (paragraph
-    (line
-      (reference
-        (inner_reference)))))
+    (reference
+      (inner_reference))))
 
 ====
 code tries reference
@@ -60,6 +56,5 @@ agenda `sea «bold» ttle` montreal
 
 (source_file
   (paragraph
-    (line
-      (code
-        (inner_code)))))
+    (code
+      (inner_code))))

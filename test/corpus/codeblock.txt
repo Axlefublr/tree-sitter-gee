@@ -11,12 +11,10 @@ lanes
 ---
 
 (source_file
-  (paragraph
-    (line))
+  (paragraph)
   (codeblock
     (inner_codeblock))
-  (paragraph
-    (line)))
+  (paragraph))
 
 ====
 cock seq
@@ -33,14 +31,12 @@ lanes
 ---
 
 (source_file
-  (paragraph
-    (line))
+  (paragraph)
   (codeblock
     (inner_codeblock))
   (codeblock
     (inner_codeblock))
-  (paragraph
-    (line)))
+  (paragraph))
 
 ====
 cock seq between
@@ -58,16 +54,13 @@ lanes
 ---
 
 (source_file
-  (paragraph
-    (line))
+  (paragraph)
   (codeblock
     (inner_codeblock))
-  (paragraph
-    (line))
+  (paragraph)
   (codeblock
     (inner_codeblock))
-  (paragraph
-    (line)))
+  (paragraph))
 
 ====
 heading owns cock
@@ -84,15 +77,12 @@ lanes
 ---
 
 (source_file
-  (paragraph
-    (line))
+  (paragraph)
   (heading1
     (heading1_header
       (heading_title))
     (heading1_contents
-      (paragraph
-        (line))
+      (paragraph)
       (codeblock
         (inner_codeblock))
-      (paragraph
-        (line)))))
+      (paragraph))))

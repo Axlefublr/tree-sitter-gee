@@ -7,9 +7,8 @@ word _italic_ word
 
 (source_file
   (paragraph
-    (line
-      (italic
-        (inner_italic)))))
+    (italic
+      (inner_italic))))
 
 ======
 bold
@@ -20,9 +19,8 @@ word *bold* word
 
 (source_file
   (paragraph
-    (line
-      (bold
-        (inner_bold)))))
+    (bold
+      (inner_bold))))
 
 ======
 strikethrough
@@ -33,6 +31,5 @@ word ~strikethrough~ word
 
 (source_file
   (paragraph
-    (line
-      (strikethrough
-        (inner_strikethrough)))))
+    (strikethrough
+      (inner_strikethrough))))
