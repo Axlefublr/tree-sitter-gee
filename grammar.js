@@ -13,7 +13,19 @@ export default grammar({
   extras: _ => [],
 
   conflicts: $ => [
-    // [$.code],
+    [$.heading1_contents],
+    [$.heading2_contents],
+    [$.heading3_contents],
+    [$.heading4_contents],
+    [$.heading5_contents],
+    [$.heading6_contents],
+    [$.heading1],
+    [$.heading2],
+    [$.heading3],
+    [$.heading4],
+    [$.heading5],
+    [$.heading6],
+    [$.paragraph],
     [$.underline, $._stray],
     [$.strikethrough, $._stray_in_underline],
     [$.strikethrough, $._stray],
@@ -27,18 +39,41 @@ export default grammar({
   ],
 
   rules: {
-    source_file: $ => seq(
-      optional($._separator),
-      optional(seq(
-        $._block,
-        repeat(seq($._separator, $._block)),
-        optional($._separator)
-      )),
-    ),
+    source_file: $ => repeat(choice($._separator, $._block)),
 
-    _block: $ => choice($.paragraph),
+    _block: $ => choice($.paragraph, $.heading1, $.heading2, $.heading3, $.heading4, $.heading5, $.heading6),
 
-    paragraph: $ => repeat1($.line),
+    heading6: $ => seq(optional($._space), $.heading6_header, $._newline, optional($.heading6_contents)),
+    heading5: $ => seq(optional($._space), $.heading5_header, $._newline, optional($.heading5_contents)),
+    heading4: $ => seq(optional($._space), $.heading4_header, $._newline, optional($.heading4_contents)),
+    heading3: $ => seq(optional($._space), $.heading3_header, $._newline, optional($.heading3_contents)),
+    heading2: $ => seq(optional($._space), $.heading2_header, $._newline, optional($.heading2_contents)),
+    heading1: $ => seq(optional($._space), $.heading1_header, $._newline, optional($.heading1_contents)),
+
+    heading6_header: $ => choice(seq('###### ', $.heading_title), $.heading6_line),
+    heading5_header: $ => choice(seq('##### ', $.heading_title), $.heading5_line),
+    heading4_header: $ => choice(seq('#### ', $.heading_title), $.heading4_line),
+    heading3_header: $ => choice(seq('### ', $.heading_title), $.heading3_line),
+    heading2_header: $ => choice(seq('## ', $.heading_title), $.heading2_line),
+    heading1_header: $ => choice(seq('# ', $.heading_title), $.heading1_line),
+
+    heading6_line: _ => '━━━━━━',
+    heading5_line: _ => '━━━━━',
+    heading4_line: _ => '━━━━',
+    heading3_line: _ => '━━━',
+    heading2_line: _ => '━━',
+    heading1_line: _ => '━',
+
+    heading6_contents: $ => prec.dynamic(100, repeat1(choice($.paragraph, $._separator))),
+    heading5_contents: $ => prec.dynamic(100, repeat1(choice($.paragraph, $.heading6, $._separator))),
+    heading4_contents: $ => prec.dynamic(100, repeat1(choice($.paragraph, $.heading5, $.heading6, $._separator))),
+    heading3_contents: $ => prec.dynamic(100, repeat1(choice($.paragraph, $.heading4, $.heading5, $.heading6, $._separator))),
+    heading2_contents: $ => prec.dynamic(100, repeat1(choice($.paragraph, $.heading3, $.heading4, $.heading5, $.heading6, $._separator))),
+    heading1_contents: $ => prec.dynamic(100, repeat1(choice($.paragraph, $.heading2, $.heading3, $.heading4, $.heading5, $.heading6, $._separator))),
+
+    heading_title: $ => $._anything,
+
+    paragraph: $ => prec.dynamic(-1, repeat1($.line)),
 
     line: $ => seq(
       repeat1(choice($._space, $._word)),
@@ -64,7 +99,7 @@ export default grammar({
     inner_bold:            $ => seq($._word_bold,   repeat(seq($._space, $._word_bold))),
     inner_italic:          $ => seq($._word_italic, repeat(seq($._space, $._word_italic))),
 
-    code: $ => prec.right(1, seq('`', choice(
+    code: $ => prec.right(10, seq('`', choice(
       optional(seq('`', optional($.language_name))),
       seq($.inner_code, optional(seq('`', optional($.language_name))))
     ))),
@@ -86,6 +121,7 @@ export default grammar({
     _stray: _ => choice('/', '*', '~', '_', '`'),
     _plain_code: _ => /[^\n`]+/,
     _plain: _ => /[^\s/*~`_]+/,
+    _anything: _ => /[^\n]+/,
 
     _separator: _ => /(([ \t]*)\n)+/,
     _newline: _ => "\n",
