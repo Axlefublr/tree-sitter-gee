@@ -34,6 +34,25 @@
     }
   },
   {
+    "type": "codeblock",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "inner_codeblock",
+          "named": true
+        },
+        {
+          "type": "language_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "heading1",
     "named": true,
     "fields": {},
@@ -60,6 +79,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "codeblock",
+          "named": true
+        },
         {
           "type": "heading2",
           "named": true
@@ -134,6 +157,10 @@
       "required": false,
       "types": [
         {
+          "type": "codeblock",
+          "named": true
+        },
+        {
           "type": "heading3",
           "named": true
         },
@@ -203,6 +230,10 @@
       "required": false,
       "types": [
         {
+          "type": "codeblock",
+          "named": true
+        },
+        {
           "type": "heading4",
           "named": true
         },
@@ -268,6 +299,10 @@
       "required": false,
       "types": [
         {
+          "type": "codeblock",
+          "named": true
+        },
+        {
           "type": "heading5",
           "named": true
         },
@@ -329,6 +364,10 @@
       "required": false,
       "types": [
         {
+          "type": "codeblock",
+          "named": true
+        },
+        {
           "type": "heading6",
           "named": true
         },
@@ -386,6 +425,10 @@
       "required": false,
       "types": [
         {
+          "type": "codeblock",
+          "named": true
+        },
+        {
           "type": "paragraph",
           "named": true
         }
@@ -423,6 +466,11 @@
   },
   {
     "type": "inner_code",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "inner_codeblock",
     "named": true,
     "fields": {}
   },
@@ -551,6 +599,10 @@
       "required": false,
       "types": [
         {
+          "type": "codeblock",
+          "named": true
+        },
+        {
           "type": "heading1",
           "named": true
         },
@@ -634,6 +686,10 @@
   },
   {
     "type": "`",
+    "named": false
+  },
+  {
+    "type": "```",
     "named": false
   },
   {
