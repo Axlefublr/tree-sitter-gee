@@ -15,6 +15,7 @@
 (italic) @markup.italic
 (bold) @markup.bold
 (strikethrough) @markup.strikethrough
-(code (inner_code) @markup.raw.inline)
 (reference (inner_reference) @markup.reference)
+(code (inner_code) @markup.raw.inline)
 (code (inner_code) @markup.raw.inline (language_name) @comment)
+(codeblock (language_name) @comment)
