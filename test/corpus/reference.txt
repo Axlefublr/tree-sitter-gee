@@ -1,0 +1,65 @@
+====
+Reference
+====
+agenda «seattle» montreal
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (reference
+        (inner_reference)))))
+
+====
+Reference empty
+====
+agenda «» montreal *bold*
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (reference)
+      (bold
+        (inner_bold)))))
+
+====
+Reference stray
+====
+agenda «seattle montreal
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (reference
+        (inner_reference)))))
+
+====
+Reference tries code
+====
+agenda «sea `bold` ttle» montreal
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (reference
+        (inner_reference)))))
+
+====
+code tries Reference
+====
+agenda `sea «bold» ttle` montreal
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (code
+        (inner_code)))))

@@ -91,8 +91,9 @@ export default grammar({
     _word_strikethrough: $ => choice($.italic, $.bold, repeat1(choice($._stray_in_strikethrough, $._raw_in_strikethrough, $._plain))),
     _word_bold: $ => choice($.italic, repeat1(choice($._stray_in_bold, $._raw_in_bold, $._plain))),
     _word_italic: $ => repeat1(choice($._raw_in_italic, $._plain)),
-    _word: $ => choice($.italic, $.bold, $.strikethrough, $.underline, $.code, $._plain, $._stray),
+    _word: $ => choice($.italic, $.bold, $.strikethrough, $.underline, $.code, $.reference, $._plain, $._stray),
 
+    inner_reference:       $ => $._plain_reference,
     inner_code:            $ => $._plain_code,
     inner_underline:       $ => seq($._word_underline, repeat(seq($._space, $._word_underline))),
     inner_strikethrough:   $ => seq($._word_strikethrough, repeat(seq($._space, $._word_strikethrough))),
@@ -103,6 +104,7 @@ export default grammar({
       optional(seq('`', optional($.language_name))),
       seq($.inner_code, optional(seq('`', optional($.language_name))))
     ))),
+    reference: $ => prec.right(9, seq('«', optional($.inner_reference), optional('»'))),
     underline:       $ => prec.dynamic(1, seq('_', $.inner_underline, '_')),
     strikethrough:   $ => prec.dynamic(1, seq('~', $.inner_strikethrough, '~')),
     bold:            $ => prec.dynamic(1, seq('*', $.inner_bold, '*')),
@@ -118,9 +120,10 @@ export default grammar({
     _stray_in_strikethrough: _ => choice('/', '*'),
     _stray_in_bold: _ => '/',
 
-    _stray: _ => choice('/', '*', '~', '_', '`'),
+    _stray: _ => choice('/', '*', '~', '_', '`', '«', '»'),
     _plain_code: _ => /[^\n`]+/,
-    _plain: _ => /[^\s/*~`_]+/,
+    _plain_reference: _ => /[^\n»]+/,
+    _plain: _ => /[^\s/*~`_«»]+/,
     _anything: _ => /[^\n]+/,
 
     _separator: _ => /(([ \t]*)\n)+/,

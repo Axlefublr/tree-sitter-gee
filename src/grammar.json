@@ -785,6 +785,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "reference"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_plain"
         },
         {
@@ -792,6 +796,10 @@
           "name": "_stray"
         }
       ]
+    },
+    "inner_reference": {
+      "type": "SYMBOL",
+      "name": "_plain_reference"
     },
     "inner_code": {
       "type": "SYMBOL",
@@ -982,6 +990,43 @@
         ]
       }
     },
+    "reference": {
+      "type": "PREC_RIGHT",
+      "value": 9,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "«"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "inner_reference"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "»"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "underline": {
       "type": "PREC_DYNAMIC",
       "value": 1,
@@ -1160,6 +1205,14 @@
         {
           "type": "STRING",
           "value": "`"
+        },
+        {
+          "type": "STRING",
+          "value": "«"
+        },
+        {
+          "type": "STRING",
+          "value": "»"
         }
       ]
     },
@@ -1167,9 +1220,13 @@
       "type": "PATTERN",
       "value": "[^\\n`]+"
     },
+    "_plain_reference": {
+      "type": "PATTERN",
+      "value": "[^\\n»]+"
+    },
     "_plain": {
       "type": "PATTERN",
-      "value": "[^\\s/*~`_]+"
+      "value": "[^\\s/*~`_«»]+"
     },
     "_anything": {
       "type": "PATTERN",

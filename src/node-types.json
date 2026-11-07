@@ -442,6 +442,11 @@
     "fields": {}
   },
   {
+    "type": "inner_reference",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "inner_strikethrough",
     "named": true,
     "fields": {},
@@ -519,6 +524,10 @@
           "named": true
         },
         {
+          "type": "reference",
+          "named": true
+        },
+        {
           "type": "strikethrough",
           "named": true
         },
@@ -539,6 +548,21 @@
       "types": [
         {
           "type": "line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "reference",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "inner_reference",
           "named": true
         }
       ]
@@ -688,6 +712,14 @@
   },
   {
     "type": "~",
+    "named": false
+  },
+  {
+    "type": "«",
+    "named": false
+  },
+  {
+    "type": "»",
     "named": false
   }
 ]
