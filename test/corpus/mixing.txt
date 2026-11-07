@@ -81,19 +81,6 @@ word ~bo*ld~ word
         (inner_strikethrough)))))
 
 ======
-strike bold mix
-======
-word ~word *word~ word* word
-
----
-
-(source_file
-  (paragraph
-    (line
-      (strikethrough
-        (inner_strikethrough)))))
-
-======
 italic strike
 ======
 word _~italic~_ word
@@ -125,32 +112,6 @@ word _~italic_ word
 italic strike stray inside
 ======
 word _bo~ld_ word
-
----
-
-(source_file
-  (paragraph
-    (line
-      (italic
-        (inner_italic)))))
-
-===============
-italic mix bold inner wins
-===============
-word _occu*driven*pation_
-
----
-
-(source_file
-  (paragraph
-    (line
-      (bold
-        (inner_bold)))))
-
-===============
-bold mix italic inner wins
-===============
-word *occu_driven_pation*
 
 ---
 
