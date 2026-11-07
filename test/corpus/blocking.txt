@@ -1,5 +1,5 @@
 ==========
-Two blocks
+two blocks
 ==========
 mount tremendous incorporate
 funny behavioral thinking
@@ -18,7 +18,7 @@ metadata diffs ocean
     (line)))
 
 ==========
-Leading newline
+leading newline
 ==========
 
 mount tremendous incorporate
@@ -32,7 +32,7 @@ funny behavioral thinking
     (line)))
 
 ==========
-Leading 2 newlines
+leading 2 newlines
 ==========
 
 
@@ -47,7 +47,7 @@ funny behavioral thinking
     (line)))
 
 ==========
-Leading spaces
+leading indentation
 ==========
 
 
@@ -62,7 +62,7 @@ funny behavioral thinking
     (line)))
 
 ==========
-Trailing newline
+trailing newline
 ==========
 mount tremendous incorporate
 funny behavioral thinking
@@ -75,7 +75,7 @@ funny behavioral thinking
     (line)))
 
 ==========
-Trailing 2 newlines
+trailing 2 newlines
 ==========
 mount tremendous incorporate
 funny behavioral thinking

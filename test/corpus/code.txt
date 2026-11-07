@@ -1,5 +1,5 @@
 ====
-Code
+code
 ====
 agenda `seattle` montreal
 
@@ -12,7 +12,7 @@ agenda `seattle` montreal
         (inner_code)))))
 
 ====
-Code empty
+code empty
 ====
 agenda `` montreal *bold*
 
@@ -26,7 +26,7 @@ agenda `` montreal *bold*
         (inner_bold)))))
 
 ====
-Code stray
+code stray
 ====
 agenda `seattle montreal
 
@@ -39,7 +39,7 @@ agenda `seattle montreal
         (inner_code)))))
 
 ====
-Code tries bold
+code tries bold
 ====
 agenda `sea *bold* ttle` montreal
 
@@ -52,7 +52,7 @@ agenda `sea *bold* ttle` montreal
         (inner_code)))))
 
 ====
-Bold tries code
+bold tries code
 ====
 agenda *sea `bold` ttle* montreal
 

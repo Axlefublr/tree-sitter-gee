@@ -649,13 +649,9 @@
         }
       ]
     },
-    "_word_underline": {
+    "_word_italic": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "italic"
-        },
         {
           "type": "SYMBOL",
           "name": "bold"
@@ -671,7 +667,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_stray_in_underline"
+                "name": "_stray_in_italic"
               },
               {
                 "type": "SYMBOL",
@@ -685,10 +681,6 @@
     "_word_strikethrough": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "italic"
-        },
         {
           "type": "SYMBOL",
           "name": "bold"
@@ -716,42 +708,13 @@
       ]
     },
     "_word_bold": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "italic"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_stray_in_bold"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_raw_in_bold"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_plain"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "_word_italic": {
       "type": "REPEAT1",
       "content": {
         "type": "CHOICE",
         "members": [
           {
             "type": "SYMBOL",
-            "name": "_raw_in_italic"
+            "name": "_raw_in_bold"
           },
           {
             "type": "SYMBOL",
@@ -765,10 +728,6 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "italic"
-        },
-        {
-          "type": "SYMBOL",
           "name": "bold"
         },
         {
@@ -777,7 +736,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "underline"
+          "name": "italic"
         },
         {
           "type": "SYMBOL",
@@ -805,12 +764,12 @@
       "type": "SYMBOL",
       "name": "_plain_code"
     },
-    "inner_underline": {
+    "inner_italic": {
       "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_word_underline"
+          "name": "_word_italic"
         },
         {
           "type": "REPEAT",
@@ -823,7 +782,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_word_underline"
+                "name": "_word_italic"
               }
             ]
           }
@@ -874,31 +833,6 @@
               {
                 "type": "SYMBOL",
                 "name": "_word_bold"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "inner_italic": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_word_italic"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_space"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "_word_italic"
               }
             ]
           }
@@ -1027,7 +961,7 @@
         ]
       }
     },
-    "underline": {
+    "italic": {
       "type": "PREC_DYNAMIC",
       "value": 1,
       "content": {
@@ -1039,7 +973,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "inner_underline"
+            "name": "inner_italic"
           },
           {
             "type": "STRING",
@@ -1090,27 +1024,6 @@
         ]
       }
     },
-    "italic": {
-      "type": "PREC_DYNAMIC",
-      "value": 1,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "/"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "inner_italic"
-          },
-          {
-            "type": "STRING",
-            "value": "/"
-          }
-        ]
-      }
-    },
     "language_name": {
       "type": "PATTERN",
       "value": "[a-z]+"
@@ -1149,13 +1062,9 @@
         }
       ]
     },
-    "_stray_in_underline": {
+    "_stray_in_italic": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "STRING",
-          "value": "/"
-        },
         {
           "type": "STRING",
           "value": "*"
@@ -1167,29 +1076,12 @@
       ]
     },
     "_stray_in_strikethrough": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "/"
-        },
-        {
-          "type": "STRING",
-          "value": "*"
-        }
-      ]
-    },
-    "_stray_in_bold": {
       "type": "STRING",
-      "value": "/"
+      "value": "*"
     },
     "_stray": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "STRING",
-          "value": "/"
-        },
         {
           "type": "STRING",
           "value": "*"
@@ -1226,7 +1118,7 @@
     },
     "_plain": {
       "type": "PATTERN",
-      "value": "[^\\s/*~`_«»]+"
+      "value": "[^\\s*~`_«»]+"
     },
     "_anything": {
       "type": "PATTERN",
@@ -1287,12 +1179,12 @@
       "paragraph"
     ],
     [
-      "underline",
+      "italic",
       "_stray"
     ],
     [
       "strikethrough",
-      "_stray_in_underline"
+      "_stray_in_italic"
     ],
     [
       "strikethrough",
@@ -1300,7 +1192,7 @@
     ],
     [
       "bold",
-      "_stray_in_underline"
+      "_stray_in_italic"
     ],
     [
       "bold",
@@ -1308,22 +1200,6 @@
     ],
     [
       "bold",
-      "_stray"
-    ],
-    [
-      "italic",
-      "_stray_in_underline"
-    ],
-    [
-      "italic",
-      "_stray_in_strikethrough"
-    ],
-    [
-      "italic",
-      "_stray_in_bold"
-    ],
-    [
-      "italic",
       "_stray"
     ]
   ],
