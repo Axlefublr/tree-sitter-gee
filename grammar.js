@@ -82,10 +82,14 @@ export default grammar({
       optional(seq('`', optional($.language_name))),
       seq($.inner_code, optional(seq('`', optional($.language_name))))
     ))),
-    reference: $ => prec.right(9, seq('«', optional($.inner_reference), optional('»'))),
-    italic:       $ => prec.dynamic(1, seq('_', $.inner_italic, '_')),
-    strikethrough:   $ => prec.dynamic(1, seq('~', $.inner_strikethrough, '~')),
-    bold:            $ => prec.dynamic(1, seq('*', $.inner_bold, '*')),
+    reference: $ => prec.right(9, seq('«', choice(
+      optional('»'),
+      seq($.inner_reference, optional('»'))
+    ))),
+
+    italic:        $ => prec.dynamic(1, seq('_', $.inner_italic, '_')),
+    strikethrough: $ => prec.dynamic(1, seq('~', $.inner_strikethrough, '~')),
+    bold:          $ => prec.dynamic(1, seq('*', $.inner_bold, '*')),
 
     language_name: _ => /[a-z]+/,
 

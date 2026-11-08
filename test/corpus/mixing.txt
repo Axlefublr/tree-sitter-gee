@@ -137,3 +137,40 @@ word *occu _driven_ pation*
   (paragraph
     (italic
       (inner_italic))))
+
+===============
+stray code in italic
+===============
+drinks _fourth`hypothesis_ attachments
+
+---
+
+(source_file
+  (paragraph
+    (code
+      (inner_code))))
+
+===============
+completed code in italic
+===============
+drinks _fourth``hypothesis_ attachments
+
+---
+
+(source_file
+  (paragraph
+    (code
+      (language_name))))
+
+===============
+filled code in italic
+===============
+drinks _fourth`gross`hypothesis_ attachments
+
+---
+
+(source_file
+  (paragraph
+    (code
+      (inner_code)
+      (language_name))))

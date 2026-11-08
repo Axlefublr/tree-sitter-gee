@@ -183,3 +183,34 @@ monroe installing
           (heading_title))
         (heading3_contents
           (paragraph))))))
+
+=================
+heading duplicate
+=================
+# top
+## mid
+### bottom
+## mid
+### bottom
+
+---
+
+(source_file
+  (heading1
+    (heading1_header
+      (heading_title))
+    (heading1_contents
+      (heading2
+        (heading2_header
+          (heading_title))
+        (heading2_contents
+          (heading3
+            (heading3_header
+              (heading_title)))))
+      (heading2
+        (heading2_header
+          (heading_title))
+        (heading2_contents
+          (heading3
+            (heading3_header
+              (heading_title))))))))
