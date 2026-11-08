@@ -12,9 +12,14 @@
 (heading5_line) @markup.heading.5
 (heading6_line) @markup.heading.6
 
+(semantic_operator) @operator.markup
 (italic) @markup.italic
 (bold) @markup.bold
 (strikethrough) @markup.strikethrough
+(bracket (inner_bracket) @markup.loose)
+(triangle (inner_triangle) @markup.strict)
+(type (type_word) @type)
+(attached_type (type (type_word) @type) . "≔" @operator.markup)
 (reference (inner_reference) @markup.reference)
 (code (inner_code) @markup.raw.inline)
 (code (inner_code) @markup.raw.inline (language_name) @comment)

@@ -1,5 +1,24 @@
 [
   {
+    "type": "attached_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "type",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bold",
     "named": true,
     "fields": {},
@@ -534,6 +553,11 @@
     }
   },
   {
+    "type": "inner_triangle",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "italic",
     "named": true,
     "fields": {},
@@ -577,7 +601,23 @@
           "named": true
         },
         {
+          "type": "semantic_operator",
+          "named": true
+        },
+        {
           "type": "strikethrough",
+          "named": true
+        },
+        {
+          "type": "triangle",
+          "named": true
+        },
+        {
+          "type": "typed_bracket",
+          "named": true
+        },
+        {
+          "type": "typed_triangle",
           "named": true
         }
       ]
@@ -597,6 +637,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "semantic_operator",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source_file",
@@ -658,6 +703,74 @@
     }
   },
   {
+    "type": "triangle",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "inner_triangle",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "type_word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typed_bracket",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attached_type",
+          "named": true
+        },
+        {
+          "type": "bracket",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typed_triangle",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attached_type",
+          "named": true
+        },
+        {
+          "type": "triangle",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "\n",
     "named": false
   },
@@ -687,6 +800,18 @@
   },
   {
     "type": "*",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": ">",
     "named": false
   },
   {
@@ -738,6 +863,14 @@
     "named": true
   },
   {
+    "type": "type_word",
+    "named": true
+  },
+  {
+    "type": "value",
+    "named": true
+  },
+  {
     "type": "~",
     "named": false
   },
@@ -747,6 +880,10 @@
   },
   {
     "type": "»",
+    "named": false
+  },
+  {
+    "type": "≔",
     "named": false
   }
 ]

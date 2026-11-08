@@ -1,0 +1,67 @@
+===============
+triangle
+===============
+<word>
+word <word> word
+word<word>word
+
+---------------
+
+(source_file
+  (paragraph
+    (triangle
+      (inner_triangle))
+    (triangle
+      (inner_triangle))
+    (triangle
+      (inner_triangle))))
+
+===============
+triangle tries bold
+===============
+<*word*>
+word <*word*> word
+word<*word*>word
+
+---------------
+
+(source_file
+  (paragraph
+    (triangle
+      (inner_triangle))
+    (triangle
+      (inner_triangle))
+    (triangle
+      (inner_triangle))))
+
+===============
+bold tries triangle
+===============
+*<word>*
+word *<word>* word
+word*<word>*word
+
+---------------
+
+(source_file
+  (paragraph
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))))
+
+===============
+triangle stray
+===============
+word < *word* <word> word
+
+---------------
+
+(source_file
+  (paragraph
+    (bold
+      (inner_bold))
+    (triangle
+      (inner_triangle))))

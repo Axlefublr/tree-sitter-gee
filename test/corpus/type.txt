@@ -1,0 +1,128 @@
+===============
+type about
+===============
+<word>:
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle)))))
+
+===============
+type
+===============
+<word>:word
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (attached_type
+        (type
+          (type_word))))))
+
+===============
+type short
+===============
+<word>:a
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (attached_type
+        (type
+          (type_word))))))
+
+===============
+type code
+===============
+_italic_ <word>:`` *bold*
+
+---------------
+
+(source_file
+  (paragraph
+    (italic
+      (inner_italic))
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (attached_type
+        (type)))
+    (bold
+      (inner_bold))))
+
+===============
+type bullshit
+===============
+<word>:[]
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (attached_type
+        (type)))))
+
+===============
+type nested
+===============
+<word>:word<word>
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (attached_type
+        (type
+          (type_word)
+          (type_word))))))
+
+===============
+type assign
+===============
+<word>:word≔
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (attached_type
+        (type
+          (type_word))))))
+
+===============
+type assign value
+===============
+<word>:word≔value
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (attached_type
+        (type
+          (type_word))
+        (value)))))

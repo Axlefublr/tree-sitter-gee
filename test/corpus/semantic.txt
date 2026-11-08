@@ -1,0 +1,42 @@
+===============
+semantic
+===============
+⇌
+word ⇌ word
+word⇌word
+
+---------------
+
+(source_file
+  (paragraph
+    (semantic_operator)
+    (semantic_operator)
+    (semantic_operator)))
+
+===============
+semantic in code
+===============
+word `⇌` word *word*
+
+---------------
+
+(source_file
+  (paragraph
+    (code
+      (inner_code))
+    (bold
+      (inner_bold))))
+
+===============
+semantic in italic
+===============
+word _⇌_ word *word*
+
+---------------
+
+(source_file
+  (paragraph
+    (italic
+      (inner_italic))
+    (bold
+      (inner_bold))))

@@ -19,6 +19,7 @@ export default grammar({
     [$.bold, $._stray_in_italic],
     [$.bold, $._stray_in_strikethrough],
     [$.bold, $._stray],
+    [$.triangle, $._stray],
     [$.bracket, $._stray],
   ],
 
@@ -71,14 +72,35 @@ export default grammar({
     _word_italic: $ => choice($.bold, $.strikethrough, repeat1(choice($._stray_in_italic, $._plain))),
     _word_strikethrough: $ => choice($.bold, repeat1(choice($._stray_in_strikethrough, $._raw_in_strikethrough, $._plain))),
     _word_bold: $ => repeat1(choice($._raw_in_bold, $._plain)),
-    _word: $ => choice($.bold, $.strikethrough, $.italic, $.code, $.reference, $.bracket, $._plain, $._stray),
+    _word: $ => choice(
+      $.bold,
+      $.strikethrough,
+      $.italic,
+      $.code,
+      $.reference,
+      $.bracket,
+      $.typed_bracket,
+      $.triangle,
+      $.typed_triangle,
+      $.semantic_operator,
+      $._plain_text,
+      $._stray
+    ),
 
-    inner_reference:       $ => $._plain_reference,
-    inner_code:            $ => $._plain_code,
-    inner_bracket:         $ => repeat1(choice($._plain, '*', '~', '_', '`', '«', '»')),
-    inner_italic:          $ => seq($._word_italic, repeat(seq($._space, $._word_italic))),
-    inner_strikethrough:   $ => seq($._word_strikethrough, repeat(seq($._space, $._word_strikethrough))),
-    inner_bold:            $ => seq($._word_bold,   repeat(seq($._space, $._word_bold))),
+    inner_reference:     $ => $._plain_reference,
+    inner_code:          $ => $._plain_code,
+    inner_triangle:      $ => repeat1(choice($._plain, '*', '~', '_', '`', '«', '»', '[', ']')),
+    inner_bracket:       $ => repeat1(choice($._plain, '*', '~', '_', '`', '«', '»', '<', '>')),
+    inner_italic:        $ => seq($._word_italic, repeat(seq($._space, $._word_italic))),
+    inner_strikethrough: $ => seq($._word_strikethrough, repeat(seq($._space, $._word_strikethrough))),
+    inner_bold:          $ => seq($._word_bold,   repeat(seq($._space, $._word_bold))),
+
+    attached_type: $ => seq($.type, optional(seq(token(prec(3, '≔')), optional($.value)))),
+    type: $ => repeat1(choice($.type_word, $._type_shenanigan)),
+    _type_shenanigan: $ => token(prec(3, /[^\s≔]/)),
+    type_word: $ => token(prec(4, /\w+/)),
+    _type_announcer: $ => token(prec(3, ':')),
+    value: _ => token(prec(3, /[^\s]+/)),
 
     code: $ => prec.right(10, seq('`', choice(
       optional(seq('`', optional($.language_name))),
@@ -89,7 +111,11 @@ export default grammar({
       seq($.inner_reference, optional('»'))
     ))),
 
-    bracket: $ => prec.dynamic(4, seq('[', $.inner_bracket, ']')),
+    typed_bracket: $ => prec(2, seq($.bracket, seq($._type_announcer, optional($.attached_type)))),
+    typed_triangle: $ => prec(2, seq($.triangle, seq($._type_announcer, optional($.attached_type)))),
+
+    bracket: $ => prec.dynamic(4,  seq('[', $.inner_bracket, ']')),
+    triangle: $ => prec.dynamic(4, seq('<', $.inner_triangle, '>')),
 
     italic:        $ => prec.dynamic(1, seq('_', $.inner_italic, '_')),
     strikethrough: $ => prec.dynamic(2, seq('~', $.inner_strikethrough, '~')),
@@ -97,20 +123,23 @@ export default grammar({
 
     language_name: _ => /[a-z]+/,
 
-    _raw_in_strikethrough: _ => choice('_', '[', ']'),
-    _raw_in_bold: _ => choice('~', '_', '[', ']'),
+    _raw_in_strikethrough: _ => choice('_', '[', ']', '<', '>'),
+    _raw_in_bold: _ => choice('~', '_', '[', ']', '<', '>'),
 
-    _stray: _ => prec.dynamic(-2, choice('*', '~', '_', '[', ']')),
-    _stray_in_italic: _ => choice('*', '~', '[', ']'),
+    _stray: _ => prec.dynamic(-2, choice('*', '~', '_', '[', ']', '<', '>')),
+    _stray_in_italic: _ => choice('*', '~', '[', ']', '<', '>'),
     _stray_in_strikethrough: _ => '*',
 
     _plain_code: _ => /[^\n`]+/,
     _plain_reference: _ => /[^\n»]+/,
-    _plain: _ => /[^\s*~`_«»\[\]]+/,
-    _anything: _ => /[^\n]+/,
+    _semantic_operator: _ => /[⇇⇊⇈⇉↔↕⥯⇌]+/,
+    semantic_operator: _ => /[⇇⇊⇈⇉↔↕⥯⇌]+/,
+    _plain: $ => choice($._plain_text, $._semantic_operator),
+    _plain_text: _ => /[^\s*~`_«»\[\]<>⇇⇊⇈⇉↔↕⥯⇌]+/,
 
     _separator: _ => /(([ \t]*)\n)+/,
-    _newline: _ => "\n",
     _space: _ => /[ \t]+/,
+    _anything: _ => /[^\n]+/,
+    _newline: _ => "\n",
   }
 });
