@@ -1,12 +1,18 @@
 ====
 reference
 ====
-agenda «seattle» montreal
+«word»
+word «word» word
+word«word»word
 
 ---
 
 (source_file
   (paragraph
+    (reference
+      (inner_reference))
+    (reference
+      (inner_reference))
     (reference
       (inner_reference))))
 

@@ -15,6 +15,21 @@
     }
   },
   {
+    "type": "bracket",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "inner_bracket",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "code",
     "named": true,
     "fields": {},
@@ -465,6 +480,11 @@
     "fields": {}
   },
   {
+    "type": "inner_bracket",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "inner_code",
     "named": true,
     "fields": {}
@@ -538,6 +558,10 @@
       "types": [
         {
           "type": "bold",
+          "named": true
+        },
+        {
+          "type": "bracket",
           "named": true
         },
         {
@@ -663,6 +687,14 @@
   },
   {
     "type": "*",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {

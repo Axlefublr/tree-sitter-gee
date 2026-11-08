@@ -1,0 +1,62 @@
+===============
+bold
+===============
+*word*
+word *word* word
+word * word *word* word
+word*word*word
+
+---------------
+
+(source_file
+  (paragraph
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))))
+
+===============
+italic
+===============
+_word_
+word _word_ word
+word _ word _word_ word
+word_word_word
+
+---------------
+
+(source_file
+  (paragraph
+    (italic
+      (inner_italic))
+    (italic
+      (inner_italic))
+    (italic
+      (inner_italic))
+    (italic
+      (inner_italic))))
+
+===============
+strike
+===============
+~word~
+word ~word~ word
+word ~ word ~word~ word
+word~word~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))))

@@ -1,0 +1,67 @@
+===============
+bracket
+===============
+[word]
+word [word] word
+word[word]word
+
+---------------
+
+(source_file
+  (paragraph
+    (bracket
+      (inner_bracket))
+    (bracket
+      (inner_bracket))
+    (bracket
+      (inner_bracket))))
+
+===============
+bracket tries bold
+===============
+[*word*]
+word [*word*] word
+word[*word*]word
+
+---------------
+
+(source_file
+  (paragraph
+    (bracket
+      (inner_bracket))
+    (bracket
+      (inner_bracket))
+    (bracket
+      (inner_bracket))))
+
+===============
+bold tries bracket
+===============
+*[word]*
+word *[word]* word
+word*[word]*word
+
+---------------
+
+(source_file
+  (paragraph
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))))
+
+===============
+bracket stray
+===============
+word [ *word* [word] word
+
+---------------
+
+(source_file
+  (paragraph
+    (bold
+      (inner_bold))
+    (bracket
+      (inner_bracket))))
