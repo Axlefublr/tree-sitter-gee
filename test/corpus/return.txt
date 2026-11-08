@@ -1,0 +1,35 @@
+===============
+return
+===============
+⇉word
+⇉ word
+
+---------------
+
+(source_file
+  (paragraph
+    (return_expression
+      (return_operator)
+      (type
+        (type_word)))
+    (return_expression
+      (return_operator))))
+
+===============
+return in code
+===============
+word `⇉word` word *word* word
+word `⇉ word` word _word_ word
+
+---------------
+
+(source_file
+  (paragraph
+    (code
+      (inner_code))
+    (bold
+      (inner_bold))
+    (code
+      (inner_code))
+    (italic
+      (inner_italic))))

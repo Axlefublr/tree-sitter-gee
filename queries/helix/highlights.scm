@@ -13,6 +13,7 @@
 (heading6_line) @markup.heading.6
 
 (semantic_operator) @operator.markup
+(return_operator) @operator.markup
 (italic) @markup.italic
 (bold) @markup.bold
 (strikethrough) @markup.strikethrough

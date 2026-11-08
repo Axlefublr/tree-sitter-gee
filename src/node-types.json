@@ -496,12 +496,32 @@
   {
     "type": "inner_bold",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "return_operator",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "inner_bracket",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "return_operator",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "inner_code",
@@ -523,6 +543,10 @@
       "types": [
         {
           "type": "bold",
+          "named": true
+        },
+        {
+          "type": "return_operator",
           "named": true
         },
         {
@@ -548,6 +572,10 @@
         {
           "type": "bold",
           "named": true
+        },
+        {
+          "type": "return_operator",
+          "named": true
         }
       ]
     }
@@ -555,7 +583,17 @@
   {
     "type": "inner_triangle",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "return_operator",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "italic",
@@ -601,6 +639,10 @@
           "named": true
         },
         {
+          "type": "return_expression",
+          "named": true
+        },
+        {
           "type": "semantic_operator",
           "named": true
         },
@@ -633,6 +675,25 @@
       "types": [
         {
           "type": "inner_reference",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "return_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "return_operator",
+          "named": true
+        },
+        {
+          "type": "type",
           "named": true
         }
       ]
@@ -860,6 +921,10 @@
   },
   {
     "type": "language_name",
+    "named": true
+  },
+  {
+    "type": "return_operator",
     "named": true
   },
   {

@@ -919,6 +919,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "return_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_plain_text"
         },
         {
@@ -1641,20 +1645,59 @@
       "value": "*"
     },
     "_plain_code": {
-      "type": "PATTERN",
-      "value": "[^\\n`]+"
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 10,
+        "content": {
+          "type": "PATTERN",
+          "value": "[^\\n`]+"
+        }
+      }
     },
     "_plain_reference": {
-      "type": "PATTERN",
-      "value": "[^\\n»]+"
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 9,
+        "content": {
+          "type": "PATTERN",
+          "value": "[^\\n»]+"
+        }
+      }
+    },
+    "return_operator": {
+      "type": "STRING",
+      "value": "⇉"
+    },
+    "return_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "return_operator"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "type"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
     },
     "_semantic_operator": {
       "type": "PATTERN",
-      "value": "[⇇⇊⇈⇉↔↕⥯⇌]+"
+      "value": "[⇇⇊⇈↔↕⥯⇌]+"
     },
     "semantic_operator": {
       "type": "PATTERN",
-      "value": "[⇇⇊⇈⇉↔↕⥯⇌]+"
+      "value": "[⇇⇊⇈↔↕⥯⇌]+"
     },
     "_plain": {
       "type": "CHOICE",
@@ -1666,6 +1709,10 @@
         {
           "type": "SYMBOL",
           "name": "_semantic_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "return_operator"
         }
       ]
     },

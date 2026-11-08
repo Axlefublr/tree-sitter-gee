@@ -83,6 +83,7 @@ export default grammar({
       $.triangle,
       $.typed_triangle,
       $.semantic_operator,
+      $.return_expression,
       $._plain_text,
       $._stray
     ),
@@ -130,11 +131,13 @@ export default grammar({
     _stray_in_italic: _ => choice('*', '~', '[', ']', '<', '>'),
     _stray_in_strikethrough: _ => '*',
 
-    _plain_code: _ => /[^\n`]+/,
-    _plain_reference: _ => /[^\n»]+/,
-    _semantic_operator: _ => /[⇇⇊⇈⇉↔↕⥯⇌]+/,
-    semantic_operator: _ => /[⇇⇊⇈⇉↔↕⥯⇌]+/,
-    _plain: $ => choice($._plain_text, $._semantic_operator),
+    _plain_code: _ => token(prec(10, /[^\n`]+/)),
+    _plain_reference: _ => token(prec(9, /[^\n»]+/)),
+    return_operator: _ => '⇉',
+    return_expression: $ => seq($.return_operator, optional($.type)),
+    _semantic_operator: _ => /[⇇⇊⇈↔↕⥯⇌]+/,
+    semantic_operator: _ => /[⇇⇊⇈↔↕⥯⇌]+/,
+    _plain: $ => choice($._plain_text, $._semantic_operator, $.return_operator),
     _plain_text: _ => /[^\s*~`_«»\[\]<>⇇⇊⇈⇉↔↕⥯⇌]+/,
 
     _separator: _ => /(([ \t]*)\n)+/,
