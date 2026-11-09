@@ -97,8 +97,9 @@ export default grammar({
     inner_bold:          $ => seq($._word_bold,   repeat(seq($._space, $._word_bold))),
 
     attached_type: $ => seq($.type, optional(seq(token(prec(3, '≔')), optional($.value)))),
-    type: $ => repeat1(choice($.type_word, $._type_shenanigan)),
+    type: $ => repeat1(choice(seq($.type_word, optional($.nulling_operator)), $._type_shenanigan)),
     _type_shenanigan: $ => token(prec(3, /[^\s≔]/)),
+    nulling_operator: _ => token(prec(3, '?')),
     type_word: $ => token(prec(4, /\w+/)),
     _type_announcer: $ => token(prec(3, ':')),
     value: _ => token(prec(3, /[^\s]+/)),

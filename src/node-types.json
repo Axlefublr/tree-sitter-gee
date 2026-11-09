@@ -787,6 +787,10 @@
       "required": false,
       "types": [
         {
+          "type": "nulling_operator",
+          "named": true
+        },
+        {
           "type": "type_word",
           "named": true
         }
@@ -921,6 +925,10 @@
   },
   {
     "type": "language_name",
+    "named": true
+  },
+  {
+    "type": "nulling_operator",
     "named": true
   },
   {

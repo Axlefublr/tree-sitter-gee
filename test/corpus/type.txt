@@ -28,6 +28,57 @@ type
           (type_word))))))
 
 ===============
+type nullable
+===============
+<word>:word?
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (attached_type
+        (type
+          (type_word)
+          (nulling_operator))))))
+
+===============
+type not nullable
+===============
+<word>:word[]?
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (attached_type
+        (type
+          (type_word))))))
+
+===============
+type nested nullable
+===============
+<word>:word[word?]
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (attached_type
+        (type
+          (type_word)
+          (type_word)
+          (nulling_operator))))))
+
+===============
 type short
 ===============
 <word>:a

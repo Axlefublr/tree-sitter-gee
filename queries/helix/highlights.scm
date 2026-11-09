@@ -14,6 +14,7 @@
 
 (semantic_operator) @operator.markup
 (return_operator) @operator.markup
+(nulling_operator) @operator.markup
 (italic) @markup.italic
 (bold) @markup.bold
 (strikethrough) @markup.strikethrough
