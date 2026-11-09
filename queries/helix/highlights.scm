@@ -21,6 +21,8 @@
 (bracket (inner_bracket) @markup.loose)
 (triangle (inner_triangle) @markup.strict)
 (type (type_word) @type)
+(typed_bracket (bracket) . "≔" @operator.markup)
+(typed_triangle (triangle) . "≔" @operator.markup)
 (attached_type (type (type_word) @type) . "≔" @operator.markup)
 (reference (inner_reference) @markup.reference)
 (code (inner_code) @markup.raw.inline)

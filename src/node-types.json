@@ -812,6 +812,10 @@
         {
           "type": "bracket",
           "named": true
+        },
+        {
+          "type": "value",
+          "named": true
         }
       ]
     }
@@ -830,6 +834,10 @@
         },
         {
           "type": "triangle",
+          "named": true
+        },
+        {
+          "type": "value",
           "named": true
         }
       ]

@@ -12,6 +12,19 @@ type about
         (inner_triangle)))))
 
 ===============
+type unassigned
+===============
+<word>≔
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle)))))
+
+===============
 type
 ===============
 <word>:word
@@ -26,6 +39,20 @@ type
       (attached_type
         (type
           (type_word))))))
+
+===============
+value
+===============
+<word>≔word
+
+---------------
+
+(source_file
+  (paragraph
+    (typed_triangle
+      (triangle
+        (inner_triangle))
+      (value))))
 
 ===============
 type nullable

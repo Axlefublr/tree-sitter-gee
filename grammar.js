@@ -96,12 +96,13 @@ export default grammar({
     inner_strikethrough: $ => seq($._word_strikethrough, repeat(seq($._space, $._word_strikethrough))),
     inner_bold:          $ => seq($._word_bold,   repeat(seq($._space, $._word_bold))),
 
-    attached_type: $ => seq($.type, optional(seq(token(prec(3, '≔')), optional($.value)))),
+    attached_type: $ => seq($.type, optional($._value_expression)),
     type: $ => repeat1(choice(seq($.type_word, optional($.nulling_operator)), $._type_shenanigan)),
-    _type_shenanigan: $ => token(prec(3, /[^\s≔]/)),
-    nulling_operator: _ => token(prec(3, '?')),
-    type_word: $ => token(prec(4, /\w+/)),
+    _type_shenanigan: _ => token(prec(3, /[^\s≔]/)),
+    _value_expression: $ => seq(token(prec(3, '≔')), optional($.value)),
+    nulling_operator: _ => token(prec(5, '?')),
     _type_announcer: $ => token(prec(3, ':')),
+    type_word: _ => token(prec(4, /\w+/)),
     value: _ => token(prec(3, /[^\s]+/)),
 
     code: $ => prec.right(10, seq('`', choice(
@@ -113,8 +114,18 @@ export default grammar({
       seq($.inner_reference, optional('»'))
     ))),
 
-    typed_bracket: $ => prec(2, seq($.bracket, seq($._type_announcer, optional($.attached_type)))),
-    typed_triangle: $ => prec(2, seq($.triangle, seq($._type_announcer, optional($.attached_type)))),
+    typed_bracket: $ => prec(2, seq(
+      $.bracket, choice(
+        seq($._type_announcer, optional($.attached_type)),
+        $._value_expression
+      )
+    )),
+    typed_triangle: $ => prec(2, seq(
+      $.triangle, choice(
+        seq($._type_announcer, optional($.attached_type)),
+        $._value_expression
+      )
+    )),
 
     bracket: $ => prec.dynamic(4,  seq('[', $.inner_bracket, ']')),
     triangle: $ => prec.dynamic(4, seq('<', $.inner_triangle, '>')),
