@@ -61,7 +61,7 @@
           "named": true
         },
         {
-          "type": "language_name",
+          "type": "language_marker",
           "named": true
         }
       ]
@@ -641,6 +641,21 @@
     }
   },
   {
+    "type": "language_marker",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "language_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "paragraph",
     "named": true,
     "fields": {},
@@ -919,6 +934,10 @@
   },
   {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": ";",
     "named": false
   },
   {

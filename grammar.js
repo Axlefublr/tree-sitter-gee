@@ -120,8 +120,8 @@ export default grammar({
     value: _ => token(prec(3, /[^\s]+/)),
 
     code: $ => prec.right(10, seq('`', choice(
-      optional(seq('`', optional($.language_name))),
-      seq($.inner_code, optional(seq('`', optional($.language_name))))
+      optional(seq('`', optional($.language_marker))),
+      seq($.inner_code, optional(seq('`', optional($.language_marker))))
     ))),
     reference: $ => prec.right(9, seq('«', choice(
       optional('»'),
@@ -149,6 +149,7 @@ export default grammar({
     bold:          $ => prec.dynamic(5, seq('**', $.inner_bold, '**')),
     italic:        $ => prec.dynamic(1, seq('*', $.inner_italic, '*')),
 
+    language_marker: $ => seq(choice(token(prec(1, ';')), token(prec(1, ':'))), optional($.language_name)),
     language_name: _ => /[a-z]+/,
 
     _raw_markup: _ => choice('*', '**', '***', '~', '~~', '`', '«', '»'),

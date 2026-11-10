@@ -1,6 +1,6 @@
 (code
   (inner_code) @injection.content (#set! injection.include-unnamed-children)
-  (language_name) @injection.language
+  (language_marker (language_name) @injection.language)
 )
 
 (codeblock

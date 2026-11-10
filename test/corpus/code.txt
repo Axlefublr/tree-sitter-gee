@@ -14,8 +14,7 @@ word`word`word
     (code
       (inner_code))
     (code
-      (inner_code)
-      (language_name))))
+      (inner_code))))
 
 ====
 code empty
@@ -65,3 +64,40 @@ agenda **sea `bold` ttle** montreal
   (paragraph
     (code
       (inner_code))))
+
+====
+code inject
+====
+`word`;cr
+word `word`;cr word
+
+---
+
+(source_file
+  (paragraph
+    (code
+      (inner_code)
+      (language_marker
+        (language_name)))
+    (code
+      (inner_code)
+      (language_marker
+        (language_name)))))
+====
+code inject colon
+====
+`word`:cr
+word `word`:cr word
+
+---
+
+(source_file
+  (paragraph
+    (code
+      (inner_code)
+      (language_marker
+        (language_name)))
+    (code
+      (inner_code)
+      (language_marker
+        (language_name)))))

@@ -27,5 +27,6 @@
 (attached_type (type (type_word) @type) . "≔" @operator.markup)
 (reference (inner_reference) @markup.reference)
 (code (inner_code) @markup.raw.inline)
-(code (inner_code) @markup.raw.inline (language_name) @comment)
-(codeblock (language_name) @comment)
+(code (inner_code) @source . (language_marker) @comment)
+(codeblock (inner_codeblock) @markup.raw.block)
+(codeblock (language_name) @comment . (inner_codeblock) @source)
