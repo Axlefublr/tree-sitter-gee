@@ -41,14 +41,14 @@ funny behavioral thinking
 ==========
 leading indentation
 ==========
-
+funny behavioral thinking
 
       mount tremendous incorporate
-funny behavioral thinking
 
 ---
 
 (source_file
+  (paragraph)
   (paragraph))
 
 ==========

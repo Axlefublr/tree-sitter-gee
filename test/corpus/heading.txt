@@ -107,6 +107,50 @@ approaches hierarchy
       (paragraph))))
 
 =======
+heading unnamed level 2 in 1
+=======
+━
+aging filme
+━━
+phillips assembly
+approaches hierarchy
+
+---
+
+(source_file
+  (heading1
+    (heading1_header
+      (heading1_line))
+    (heading1_contents
+      (paragraph)
+      (heading2
+        (heading2_header
+          (heading2_line))
+        (heading2_contents
+          (paragraph))))))
+
+=======
+heading unnamed level 2 in 1 no between
+=======
+━
+━━
+phillips assembly
+approaches hierarchy
+
+---
+
+(source_file
+  (heading1
+    (heading1_header
+      (heading1_line))
+    (heading1_contents
+      (heading2
+        (heading2_header
+          (heading2_line))
+        (heading2_contents
+          (paragraph))))))
+
+=======
 heading two blocks
 =======
 # heading

@@ -1,0 +1,121 @@
+===============
+strike italibold
+===============
+~~***word***~~
+word ~~***word***~~ word
+word~~***word***~~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough
+        (italibold
+          (inner_italibold))))
+    (strikethrough
+      (inner_strikethrough
+        (italibold
+          (inner_italibold))))
+    (strikethrough
+      (inner_strikethrough
+        (italibold
+          (inner_italibold))))))
+
+===============
+strike bold
+===============
+~~**word**~~
+word ~~**word**~~ word
+word~~**word**~~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough
+        (bold
+          (inner_bold))))
+    (strikethrough
+      (inner_strikethrough
+        (bold
+          (inner_bold))))
+    (strikethrough
+      (inner_strikethrough
+        (bold
+          (inner_bold))))))
+===============
+strike italic
+===============
+~~*word*~~
+word ~~*word*~~ word
+word~~*word*~~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough
+        (italic
+          (inner_italic))))
+    (strikethrough
+      (inner_strikethrough
+        (italic
+          (inner_italic))))
+    (strikethrough
+      (inner_strikethrough
+        (italic
+          (inner_italic))))))
+===============
+italibold strike
+===============
+***~~word~~***
+word ***~~word~~*** word
+word***~~word~~***word
+
+---------------
+
+(source_file
+  (paragraph
+    (italibold
+		(inner_italibold))
+    (italibold
+		(inner_italibold))
+    (italibold
+		(inner_italibold))))
+===============
+bold strike
+===============
+**~~word~~**
+word **~~word~~** word
+word**~~word~~**word
+
+---------------
+
+(source_file
+  (paragraph
+    (bold
+		(inner_bold))
+    (bold
+		(inner_bold))
+    (bold
+		(inner_bold))))
+===============
+italic strike
+===============
+*~~word~~*
+word *~~word~~* word
+word*~~word~~*word
+
+---------------
+
+(source_file
+  (paragraph
+    (italic
+		(inner_italic))
+    (italic
+		(inner_italic))
+    (italic
+		(inner_italic))))

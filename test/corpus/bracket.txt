@@ -19,9 +19,9 @@ word[word]word
 ===============
 bracket tries bold
 ===============
-[*word*]
-word [*word*] word
-word[*word*]word
+[**word**]
+word [**word**] word
+word[**word**]word
 
 ---------------
 
@@ -37,9 +37,9 @@ word[*word*]word
 ===============
 bold tries bracket
 ===============
-*[word]*
-word *[word]* word
-word*[word]*word
+**[word]**
+word **[word]** word
+word**[word]**word
 
 ---------------
 
@@ -55,7 +55,7 @@ word*[word]*word
 ===============
 bracket stray
 ===============
-word [ *word* [word] word
+word [ **word** [word] word
 
 ---------------
 

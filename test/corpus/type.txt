@@ -124,7 +124,7 @@ type short
 ===============
 type code
 ===============
-_italic_ <word>:`` *bold*
+*italic* <word>:`` **bold**
 
 ---------------
 

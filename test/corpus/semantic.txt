@@ -16,7 +16,7 @@ word⇌word
 ===============
 semantic in code
 ===============
-word `⇌` word *word*
+word `⇌` word **word**
 
 ---------------
 
@@ -30,7 +30,7 @@ word `⇌` word *word*
 ===============
 semantic in italic
 ===============
-word _⇌_ word *word*
+word *⇌* word **word**
 
 ---------------
 

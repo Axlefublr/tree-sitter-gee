@@ -20,7 +20,7 @@ word`word`word
 ====
 code empty
 ====
-agenda `` montreal *bold*
+agenda `` montreal **bold**
 
 ---
 
@@ -33,7 +33,7 @@ agenda `` montreal *bold*
 ====
 code stray
 ====
-agenda `seattle montreal
+agenda `seattle **montreal**
 
 ---
 
@@ -45,7 +45,7 @@ agenda `seattle montreal
 ====
 code tries bold
 ====
-agenda `sea *bold* ttle` montreal
+agenda `sea **bold** ttle` montreal
 
 ---
 
@@ -57,7 +57,7 @@ agenda `sea *bold* ttle` montreal
 ====
 bold tries code
 ====
-agenda *sea `bold` ttle* montreal
+agenda **sea `bold` ttle** montreal
 
 ---
 

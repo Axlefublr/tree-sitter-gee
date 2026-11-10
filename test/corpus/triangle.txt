@@ -19,9 +19,9 @@ word<word>word
 ===============
 triangle tries bold
 ===============
-<*word*>
-word <*word*> word
-word<*word*>word
+<**word**>
+word <**word**> word
+word<**word**>word
 
 ---------------
 
@@ -37,9 +37,9 @@ word<*word*>word
 ===============
 bold tries triangle
 ===============
-*<word>*
-word *<word>* word
-word*<word>*word
+**<word>**
+word **<word>** word
+word**<word>**word
 
 ---------------
 
@@ -55,7 +55,7 @@ word*<word>*word
 ===============
 triangle stray
 ===============
-word < *word* <word> word
+word < **word** <word> word
 
 ---------------
 

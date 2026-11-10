@@ -1,10 +1,35 @@
 ===============
+italibold
+===============
+***word***
+word ***word*** word
+word *** ~~word~~ word ***word*** word ~~word~~ word
+word***word***word
+
+---------------
+
+(source_file
+  (paragraph
+    (italibold
+      (inner_italibold))
+    (italibold
+      (inner_italibold))
+    (strikethrough
+      (inner_strikethrough))
+    (italibold
+      (inner_italibold))
+    (strikethrough
+      (inner_strikethrough))
+    (italibold
+      (inner_italibold))))
+
+===============
 bold
 ===============
-*word*
-word *word* word
-word * word *word* word
-word*word*word
+**word**
+word **word** word
+word ** word **word** word ~~word~~ word
+word**word**word
 
 ---------------
 
@@ -16,16 +41,18 @@ word*word*word
       (inner_bold))
     (bold
       (inner_bold))
+    (strikethrough
+      (inner_strikethrough))
     (bold
       (inner_bold))))
 
 ===============
 italic
 ===============
-_word_
-word _word_ word
-word _ word _word_ word
-word_word_word
+*word*
+word *word* word
+word * word *word* word ~~word~~ word
+word*word*word
 
 ---------------
 
@@ -37,16 +64,18 @@ word_word_word
       (inner_italic))
     (italic
       (inner_italic))
+    (strikethrough
+      (inner_strikethrough))
     (italic
       (inner_italic))))
 
 ===============
 strike
 ===============
-~word~
-word ~word~ word
-word ~ word ~word~ word
-word~word~word
+~~word~~
+word ~~word~~ word
+word ~~ word ~~word~~ word *word* word
+word~~word~~word
 
 ---------------
 
@@ -58,5 +87,7 @@ word~word~word
       (inner_strikethrough))
     (strikethrough
       (inner_strikethrough))
+    (italic
+      (inner_italic))
     (strikethrough
       (inner_strikethrough))))

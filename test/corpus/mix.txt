@@ -1,0 +1,155 @@
+===============
+strike mix italibold
+===============
+~~w***or***d~~
+word ~~w***or***d~~ word
+word~~w***or***d~~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))))
+
+===============
+strike mix bold
+===============
+~~w**or**d~~
+word ~~w**or**d~~ word
+word~~w**or**d~~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))))
+
+===============
+strike mix italic
+===============
+~~w*or*d~~
+word ~~w*or*d~~ word
+word~~w*or*d~~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))))
+===============
+italibold mix bold
+===============
+***w**or**d***
+word ***w**or**d*** word
+word***w**or**d***word
+
+---------------
+
+(source_file
+  (paragraph
+    (italibold
+      (inner_italibold))
+    (italibold
+      (inner_italibold))
+    (italibold
+      (inner_italibold))))
+===============
+italibold mix italic
+===============
+***w*or*d***
+word ***w*or*d*** word
+word***w*or*d***word
+
+---------------
+
+(source_file
+  (paragraph
+    (italibold
+      (inner_italibold))
+    (italibold
+      (inner_italibold))
+    (italibold
+      (inner_italibold))))
+===============
+bold mix italic
+===============
+**w*or*d**
+word **w*or*d** word
+word**w*or*d**word
+
+---------------
+
+(source_file
+  (paragraph
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))))
+===============
+italic mix bold
+===============
+*w**or**d*
+word *w**or**d* word
+word*w**or**d*word
+
+---------------
+
+(source_file
+  (paragraph
+    (italic
+      (inner_italic))
+    (italic
+      (inner_italic))
+    (italic
+      (inner_italic))))
+===============
+bold mix italibold
+===============
+**w***or***d**
+word **w***or***d** word
+word**w***or***d**word
+
+---------------
+
+(source_file
+  (paragraph
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))
+    (bold
+      (inner_bold))))
+===============
+italibold mix strike
+===============
+***w~~or~~d***
+word ***w~~or~~d*** word
+word***w~~or~~d***word
+
+---------------
+
+(source_file
+  (paragraph
+    (italibold
+      (inner_italibold))
+    (italibold
+      (inner_italibold))
+    (italibold
+      (inner_italibold))))

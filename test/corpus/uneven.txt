@@ -1,0 +1,95 @@
+===============
+strike bold uneven left
+===============
+~~***word**~~
+word ~~***word**~~ word
+word~~***word**~~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))))
+
+===============
+strike bold uneven right
+===============
+~~**word***~~
+word ~~**word***~~ word
+word~~**word***~~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))))
+
+===============
+strike italic uneven left
+===============
+~~**word*~~
+word ~~**word*~~ word
+word~~**word*~~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))))
+
+===============
+strike italic uneven right
+===============
+~~*word**~~
+word ~~*word**~~ word
+word~~*word**~~word
+
+---------------
+
+(source_file
+  (paragraph
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))
+    (strikethrough
+      (inner_strikethrough))))
+
+===============
+italic bold uneven left
+===============
+***word**
+word ***word** word
+word***word**word
+
+---------------
+
+(source_file
+  (paragraph))
+
+===============
+italic bold uneven right
+===============
+**word***
+word **word*** word
+word**word***word
+
+---------------
+
+(source_file
+  (paragraph))

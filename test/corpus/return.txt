@@ -18,8 +18,8 @@ return
 ===============
 return in code
 ===============
-word `⇉word` word *word* word
-word `⇉ word` word _word_ word
+word `⇉word` word **word** word
+word `⇉ word` word *word* word
 
 ---------------
 

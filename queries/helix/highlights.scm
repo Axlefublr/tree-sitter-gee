@@ -17,6 +17,7 @@
 (nulling_operator) @operator.markup
 (italic) @markup.italic
 (bold) @markup.bold
+(italibold) @markup.italicbold
 (strikethrough) @markup.strikethrough
 (bracket (inner_bracket) @markup.loose)
 (triangle (inner_triangle) @markup.strict)
