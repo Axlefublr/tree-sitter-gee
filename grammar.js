@@ -69,7 +69,7 @@ export default grammar({
 
     heading_title: $ => $._anything,
 
-    inner_codeblock: $ => repeat1(seq($._anything, $._newline)),
+    inner_codeblock: $ => repeat1(choice($._anything, $._newline)),
 
     paragraph: $ => prec.right(repeat1($._line)),
 

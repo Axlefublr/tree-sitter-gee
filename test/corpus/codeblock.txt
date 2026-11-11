@@ -86,3 +86,29 @@ lanes
       (codeblock
         (inner_codeblock))
       (paragraph))))
+
+===============
+cock two newlines
+===============
+```crystal
+if a.is_a?(String)
+   # here a is a String
+end
+
+a = some_condition ? 1 : "hello"
+# a : Int32 | String
+
+if a.is_a?(Number)
+   # a : Int32
+else
+   # a : String
+   # guaranteed to not be the Int32 as we already checked for it in the above branch
+end
+```
+
+---------------
+
+(source_file
+  (codeblock
+    (language_name)
+    (inner_codeblock)))
