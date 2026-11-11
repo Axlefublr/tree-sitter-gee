@@ -31,13 +31,24 @@ export default grammar({
 
     _block: $ => choice($.paragraph, $.codeblock, $.heading1, $.heading2, $.heading3, $.heading4, $.heading5, $.heading6),
 
-    codeblock: $ => prec.right(seq(
+    codeblock: $ => prec.right(choice(
       seq(
-        optional($._space), '```', optional($.language_name), $._newline
+        seq(
+          optional($._space), '```', optional($.language_name), $._newline
+        ),
+        optional($.inner_codeblock),
+        seq(
+          optional($._space), '```', $._newline
+        )
       ),
-      optional($.inner_codeblock),
       seq(
-        optional($._space), '```', $._newline
+        seq(
+          optional($._space), '````', optional($.language_name), $._newline
+        ),
+        optional($.inner_codeblock),
+        seq(
+          optional($._space), '````', $._newline
+        )
       )
     )),
 
