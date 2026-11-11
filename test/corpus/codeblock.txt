@@ -194,3 +194,22 @@ end
   (codeblock
     (language_name)
     (inner_codeblock)))
+
+===============
+indented cock
+===============
+  something
+
+  ```
+  something
+  ```
+
+  something
+
+---------------
+
+(source_file
+  (paragraph)
+  (codeblock
+    (inner_codeblock))
+  (paragraph))

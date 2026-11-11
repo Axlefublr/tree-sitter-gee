@@ -34,23 +34,26 @@ export default grammar({
     codeblock: $ => prec.right(choice(
       seq(
         seq(
-          optional($._space), '```', optional($.language_name), $._newline
+          $._codeblock_delimiter, optional($.language_name), $._newline
         ),
         optional($.inner_codeblock),
         seq(
-          optional($._space), '```', $._newline
+          $._codeblock_delimiter, $._newline
         )
       ),
       seq(
         seq(
-          optional($._space), '````', optional($.language_name), $._newline
+          $._stronger_codeblock_delimiter, optional($.language_name), $._newline
         ),
         optional($.inner_codeblock),
         seq(
-          optional($._space), '````', $._newline
+          $._stronger_codeblock_delimiter, $._newline
         )
       )
     )),
+
+    _codeblock_delimiter: _ => token(seq(/[ \t]*/, '```')),
+    _stronger_codeblock_delimiter: _ => token(seq(/[ \t]*/, '````')),
 
     heading6: $ => prec.right(seq($.heading6_header, $._newline, optional($.heading6_contents))),
     heading5: $ => prec.right(seq($.heading5_header, $._newline, optional($.heading5_contents))),

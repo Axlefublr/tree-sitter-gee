@@ -945,14 +945,6 @@
     "named": false
   },
   {
-    "type": "```",
-    "named": false
-  },
-  {
-    "type": "````",
-    "named": false
-  },
-  {
     "type": "heading1_line",
     "named": true
   },
