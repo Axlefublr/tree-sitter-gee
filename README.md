@@ -67,6 +67,7 @@ You *can* however markup a *part* of a word like `mylong*word*`.
 
 Whenever you enter a markup, you must decide on a single combination at once: you can't italic some text and then also bold part of it. \
 i.e. you can `***do something like this***` but not `*something **like** this*`.
+This applies to all combinable markups, not just italic and bold.
 
 Another disambiguator is that gee won't guess what you mean, if your `*` pairs are uneven: it'll treat both as raw.
 `*this is italic*`, but `**this is entirely raw*`. \
