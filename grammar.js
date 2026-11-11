@@ -78,6 +78,8 @@ export default grammar({
       $._newline
     ),
 
+    _word_triangle: $ => repeat1(choice($._plain, $._raw_markup, '[', ']')),
+    _word_bracket: $ => repeat1(choice($._plain, $._raw_markup, '<', '>')),
     _word_strikethrough: $ => choice($.bold, $.italic, $.italibold, repeat1(choice('*', '**', '***', $._raw, $._plain))),
     _word_italibold: $ => repeat1(choice('~~', '*', '**', $._raw, $._plain)),
     _word_bold: $ => repeat1(choice('~~', '*', '***', $._raw, $._plain)),
@@ -102,8 +104,8 @@ export default grammar({
 
     inner_reference:     $ => $._plain_reference,
     inner_code:          $ => $._plain_code,
-    inner_triangle:      $ => repeat1(choice($._plain, $._raw_markup, '[', ']')),
-    inner_bracket:       $ => repeat1(choice($._plain, $._raw_markup, '<', '>')),
+    inner_triangle:      $ => seq($._word_triangle, repeat(seq($._space, $._word_triangle))),
+    inner_bracket:       $ => seq($._word_bracket, repeat(seq($._space, $._word_bracket))),
 
     inner_strikethrough: $ => seq($._word_strikethrough, repeat(seq($._space, $._word_strikethrough))),
     inner_italibold:     $ => seq($._word_italibold, repeat(seq($._space, $._word_italibold))),
