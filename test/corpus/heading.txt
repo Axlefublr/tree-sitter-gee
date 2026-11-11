@@ -258,3 +258,32 @@ heading duplicate
           (heading3
             (heading3_header
               (heading_title))))))))
+
+===============
+heading indented
+===============
+  ## sustainability
+
+  ### abraham
+  pointed
+
+  ### female
+  drama
+
+---------------
+
+(source_file
+  (heading2
+    (heading2_header
+      (heading_title))
+    (heading2_contents
+      (heading3
+        (heading3_header
+          (heading_title))
+        (heading3_contents
+          (paragraph)))
+      (heading3
+        (heading3_header
+          (heading_title))
+        (heading3_contents
+          (paragraph))))))
