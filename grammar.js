@@ -165,7 +165,7 @@ export default grammar({
     italic:        $ => prec.dynamic(1, seq('*', $.inner_italic, '*')),
 
     language_marker: $ => seq(choice(token(prec(1, ';')), token(prec(1, ':'))), optional($.language_name)),
-    language_name: _ => /[a-z]+/,
+    language_name: _ => /[\w-]+/,
 
     _raw_markup: _ => choice('*', '**', '***', '~', '~~', '`', '«', '»'),
     _raw: _ => choice('[', ']', '<', '>', '~'),
