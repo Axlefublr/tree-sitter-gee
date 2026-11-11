@@ -519,6 +519,10 @@
         {
           "type": "return_operator",
           "named": true
+        },
+        {
+          "type": "triangle",
+          "named": true
         }
       ]
     }
@@ -603,6 +607,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "return_operator",
           "named": true

@@ -65,3 +65,31 @@ word < **word** <word> word
       (inner_bold))
     (triangle
       (inner_triangle))))
+===============
+triangle bracket
+===============
+<[word]>
+<word [word] word>
+word<[word]>word
+word<word [word] word>word
+
+---------------
+
+(source_file
+  (paragraph
+    (triangle
+      (inner_triangle
+        (bracket
+          (inner_bracket))))
+    (triangle
+      (inner_triangle
+        (bracket
+          (inner_bracket))))
+    (triangle
+      (inner_triangle
+        (bracket
+          (inner_bracket))))
+    (triangle
+      (inner_triangle
+        (bracket
+          (inner_bracket))))))

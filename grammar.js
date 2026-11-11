@@ -13,6 +13,8 @@ export default grammar({
   extras: _ => [],
 
   conflicts: $ => [
+    [$._word_triangle, $.bracket],
+    [$._word_bracket, $.triangle],
     [$._word_strikethrough, $.italibold],
     [$._word_strikethrough, $.bold],
     [$._word_strikethrough, $.italic],
@@ -78,8 +80,8 @@ export default grammar({
       $._newline
     ),
 
-    _word_triangle: $ => repeat1(choice($._plain, $._raw_markup, '[', ']')),
-    _word_bracket: $ => repeat1(choice($._plain, $._raw_markup, '<', '>')),
+    _word_triangle: $ => choice($.bracket, repeat1(choice($._plain, $._raw_markup, '[', ']'))),
+    _word_bracket: $ => choice($.triangle, repeat1(choice($._plain, $._raw_markup, '<', '>'))),
     _word_strikethrough: $ => choice($.bold, $.italic, $.italibold, repeat1(choice('*', '**', '***', $._raw, $._plain))),
     _word_italibold: $ => repeat1(choice('~~', '*', '**', $._raw, $._plain)),
     _word_bold: $ => repeat1(choice('~~', '*', '***', $._raw, $._plain)),

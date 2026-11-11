@@ -801,52 +801,70 @@
       ]
     },
     "_word_triangle": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_plain"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_raw_markup"
-          },
-          {
-            "type": "STRING",
-            "value": "["
-          },
-          {
-            "type": "STRING",
-            "value": "]"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "bracket"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_plain"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_raw_markup"
+              },
+              {
+                "type": "STRING",
+                "value": "["
+              },
+              {
+                "type": "STRING",
+                "value": "]"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
     },
     "_word_bracket": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_plain"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_raw_markup"
-          },
-          {
-            "type": "STRING",
-            "value": "<"
-          },
-          {
-            "type": "STRING",
-            "value": ">"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "triangle"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_plain"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_raw_markup"
+              },
+              {
+                "type": "STRING",
+                "value": "<"
+              },
+              {
+                "type": "STRING",
+                "value": ">"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
     },
     "_word_strikethrough": {
       "type": "CHOICE",
@@ -1931,6 +1949,14 @@
   },
   "extras": [],
   "conflicts": [
+    [
+      "_word_triangle",
+      "bracket"
+    ],
+    [
+      "_word_bracket",
+      "triangle"
+    ],
     [
       "_word_strikethrough",
       "italibold"

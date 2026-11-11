@@ -19,8 +19,8 @@
 (bold) @markup.bold
 (italibold) @markup.italicbold
 (strikethrough) @markup.strikethrough
-(bracket (inner_bracket) @markup.loose)
-(triangle (inner_triangle) @markup.strict)
+(bracket "[" @punctuation.delimiter . (inner_bracket) @markup.loose . "]" @punctuation.delimiter)
+(triangle "<" @punctuation.delimiter . (inner_triangle) @markup.strict . ">" @punctuation.delimiter)
 (type (type_word) @type)
 (typed_bracket (bracket) . "≔" @operator.markup)
 (typed_triangle (triangle) . "≔" @operator.markup)
