@@ -192,7 +192,7 @@ Also up to 6 levels (inclusive), and is also included in the picker I mentioned 
 ```
 I like to read a lot of manpages, and from there I stole the syntax of using `<>` to mean a required argument, and `[]` to mean an optional argument — I use that semantically all over my notes.
 
-Because of something like `[as <Namespace>]`, where a placeholder namespace is *required*, but only inside of an overall optional argument, a bracket can contain a triangle, and a triangle can contain a bracket.
+Because of something like `[as <Namespace>]`, where a placeholder namespace is *required*, but only inside of an overall optional argument, a bracket can contain a triangle, and a triangle can contain a bracket. \
 But a bracket cannot nest another bracket and a triangle cannot test another triangle — only the inner one will be recognized.
 
 Either of the two may be followed with a *type specification* (you heard me):
@@ -236,8 +236,8 @@ In my queries (that I'll talk about later) I color `≔` there so that it sticks
 ```
 ⇉Vec<String>
 ```
-I already explained the type node above (the thing between `:` and `≔` in `:bool≔true`), and it can be used in another situation: right after a `⇉`.
-We already can specify the types of all arguments for a program / function we're noting down, and the last thing to express is the type that the thing *returns*.
+I already explained the type node above (the thing between `:` and `≔` in `:bool≔true`), and it can be used in another situation: right after a `⇉`. \
+We already can specify the types of all arguments for a program / function we're noting down, and the last thing to express is the type that the thing *returns*. \
 The `⇉` is colored the same as the `≔`, to stick out.
 
 I didn't actually show you the full `rindex` example the last time, because it would terrify you. Now that I've explained all you need to know to understand it, it probably still will, but here you go:
@@ -255,13 +255,13 @@ Last thing. These characters: `↔`, `↕`, `⥯`, `⇌`, `⇇`, `⇊`, `⇈`, `
 As the name implies, I use these characters with specific semantics that I want to stand out on a glance.
 
 `⥯`, `⇌` is the “syntax sugar operator” — when two different things are different syntax to express the same thing. \
-`↔`, `↕` is what I use to express the same concept to another human, rather than in my notes that only I see; they're a little uglier in monospace but easier to guess the meaning of. \
+`↔`, `↕` is what I use to express the above concept to another human, rather than in my notes that only I see; they're a little uglier in monospace but easier to guess the meaning of. \
 `⇇` — “depends on” \
 `⇈` — “I'm omitting some details here that you can guess from the context of the rest of the document, usually above” \
 `⇊`, `⇉` — “transforms into” or “returns”. Note that the return expression only kicks in if there is no space after the `⇉`, so if I put a space after the `⇉`, only the `⇉` is highlighted, and the next word is untouched.
 
 # install
-I'll only explain the helix steps because it's the only editor I use, but of course gee can be used in other editors, provided someone writes the queries.
+I'll only explain the helix steps because it's the only editor I use, but you could use gee in another editor, provided someone writes the queries for it (I'm not someone).
 
 Put this into your languages.toml:
 ```toml
@@ -286,7 +286,7 @@ A bunch of stuff in gee is concepts that don't really fit the bill of other exis
 
 |group|used by|
 |-----|-------|
-|`@operator.markup`|semantic operators, `?` after a type word, `≔` after a briangle|
+|`@operator.markup`|semantic operators, `?` after a type word, `≔` after a briangle or type|
 |`@markup.italicbold`|italibold|
 |`@markup.loose`|contents of brackets|
 |`@markup.strict`|contents of triangles|
@@ -305,7 +305,7 @@ And here's a backup link in case I move or rename the file: <https://github.com/
 
 # lastly
 Gee is a very selfish language, as you might have already noticed. \
-Quite a few special symbols are unicode characters for *all* of which maybe only *I* have hotkeys for, maybe in the entire world?
+Quite a few special symbols are unicode characters for *all* of which maybe only *I* have hotkeys for, maybe in the entire world? \
 I make the implementation simpler by explicitly not handling cases that I simply will never put myself in.
 Features I don't use I simply do not implement.
 
