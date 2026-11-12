@@ -496,17 +496,7 @@
   {
     "type": "inner_bold",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "return_operator",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "inner_bracket",
@@ -516,10 +506,6 @@
       "multiple": true,
       "required": false,
       "types": [
-        {
-          "type": "return_operator",
-          "named": true
-        },
         {
           "type": "triangle",
           "named": true
@@ -540,32 +526,12 @@
   {
     "type": "inner_italibold",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "return_operator",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "inner_italic",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "return_operator",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "inner_reference",
@@ -591,10 +557,6 @@
         {
           "type": "italic",
           "named": true
-        },
-        {
-          "type": "return_operator",
-          "named": true
         }
       ]
     }
@@ -609,10 +571,6 @@
       "types": [
         {
           "type": "bracket",
-          "named": true
-        },
-        {
-          "type": "return_operator",
           "named": true
         }
       ]
@@ -755,6 +713,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "return_operator",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "semantic_operator",
@@ -977,10 +940,6 @@
     "named": true
   },
   {
-    "type": "return_operator",
-    "named": true
-  },
-  {
     "type": "type_word",
     "named": true
   },
@@ -1002,6 +961,10 @@
   },
   {
     "type": "»",
+    "named": false
+  },
+  {
+    "type": "⇉",
     "named": false
   },
   {

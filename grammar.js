@@ -183,10 +183,11 @@ export default grammar({
     _plain_code: _ => token(prec(10, /[^\n`]+/)),
     _plain_reference: _ => token(prec(9, /[^\n»]+/)),
     return_operator: _ => '⇉',
+    _return_operator: _ => '⇉',
     return_expression: $ => seq($.return_operator, optional($.type)),
     _semantic_operator: _ => /[⇇⇊⇈↔↕⥯⇌]+/,
     semantic_operator: _ => /[⇇⇊⇈↔↕⥯⇌]+/,
-    _plain: $ => choice($._plain_text, $._semantic_operator, $.return_operator),
+    _plain: $ => choice($._plain_text, $._semantic_operator, $._return_operator),
     _plain_text: _ => /[^\s*~`«»\[\]<>⇇⇊⇈⇉↔↕⥯⇌]+/,
 
     _separator: _ => /(([ \t]*)\n)+/,

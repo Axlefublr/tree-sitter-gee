@@ -2044,6 +2044,10 @@
       "type": "STRING",
       "value": "⇉"
     },
+    "_return_operator": {
+      "type": "STRING",
+      "value": "⇉"
+    },
     "return_expression": {
       "type": "SEQ",
       "members": [
@@ -2086,7 +2090,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "return_operator"
+          "name": "_return_operator"
         }
       ]
     },
