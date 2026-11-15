@@ -197,6 +197,6 @@ export default grammar({
     _separator: _ => /(([ \t]*)\n)+/,
     _space: _ => /[ \t]+/,
     _anything: _ => /[^\n]+/,
-    _newline: _ => "\n",
+    _newline: _ => /\n/,
   }
 });

@@ -2140,8 +2140,8 @@
       "value": "[^\\n]+"
     },
     "_newline": {
-      "type": "STRING",
-      "value": "\n"
+      "type": "PATTERN",
+      "value": "\\n"
     }
   },
   "extras": [],
