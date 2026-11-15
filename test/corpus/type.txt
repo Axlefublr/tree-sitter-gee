@@ -204,3 +204,45 @@ type assign value
         (type
           (type_word))
         (value)))))
+
+===============
+type bare
+===============
+≕word
+
+---------------
+
+(source_file
+  (paragraph
+    (type_expression
+      (type
+        (type_word)))))
+
+===============
+type bare space
+===============
+≕ word
+
+---------------
+
+(source_file
+  (paragraph))
+
+===============
+type bare in code
+===============
+word `≕word` word **word** word
+word `≕ word` word *word* word
+
+---------------
+
+(source_file
+  (paragraph
+    (code
+      (inner_code))
+    (bold
+      (inner_bold))
+    (code
+      (inner_code))
+    (italic
+      (inner_italic))))

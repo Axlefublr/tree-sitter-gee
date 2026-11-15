@@ -1212,6 +1212,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "type_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_plain_text"
         },
         {
@@ -2014,6 +2018,10 @@
           {
             "type": "STRING",
             "value": ">"
+          },
+          {
+            "type": "STRING",
+            "value": "≕"
           }
         ]
       }
@@ -2048,6 +2056,10 @@
       "type": "STRING",
       "value": "⇉"
     },
+    "_type_operator": {
+      "type": "STRING",
+      "value": "≕"
+    },
     "return_expression": {
       "type": "SEQ",
       "members": [
@@ -2066,6 +2078,19 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "type_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_type_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "type"
         }
       ]
     },
@@ -2091,12 +2116,16 @@
         {
           "type": "SYMBOL",
           "name": "_return_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_type_operator"
         }
       ]
     },
     "_plain_text": {
       "type": "PATTERN",
-      "value": "[^\\s*~`«»\\[\\]<>⇇⇊⇈⇉↔↕⥯⇌]+"
+      "value": "[^\\s*~`«»\\[\\]<>⇇⇊⇈⇉↔↕⥯⇌≕]+"
     },
     "_separator": {
       "type": "PATTERN",

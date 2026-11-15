@@ -670,6 +670,10 @@
           "named": true
         },
         {
+          "type": "type_expression",
+          "named": true
+        },
+        {
           "type": "typed_bracket",
           "named": true
         },
@@ -812,6 +816,21 @@
         },
         {
           "type": "type_word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "type",
           "named": true
         }
       ]
@@ -969,6 +988,10 @@
   },
   {
     "type": "≔",
+    "named": false
+  },
+  {
+    "type": "≕",
     "named": false
   }
 ]

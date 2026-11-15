@@ -120,6 +120,7 @@ export default grammar({
       $.typed_triangle,
       $.semantic_operator,
       $.return_expression,
+      $.type_expression,
       $._plain_text,
       $._stray
     ),
@@ -178,17 +179,20 @@ export default grammar({
 
     _raw_markup: _ => choice('*', '**', '***', '~', '~~', '`', '«', '»'),
     _raw: _ => choice('[', ']', '<', '>', '~'),
-    _stray: _ => prec.dynamic(-1000, choice('*', '**', '***', '~~', '~', '[', ']', '<', '>')),
+    _stray: _ => prec.dynamic(-1000, choice('*', '**', '***', '~~', '~', '[', ']', '<', '>', '≕')),
 
     _plain_code: _ => token(prec(10, /[^\n`]+/)),
     _plain_reference: _ => token(prec(9, /[^\n»]+/)),
     return_operator: _ => '⇉',
     _return_operator: _ => '⇉',
+    _type_operator: _ => '≕',
+    _type_operator: _ => '≕',
     return_expression: $ => seq($.return_operator, optional($.type)),
+    type_expression: $ => seq($._type_operator, $.type),
     _semantic_operator: _ => /[⇇⇊⇈↔↕⥯⇌]+/,
     semantic_operator: _ => /[⇇⇊⇈↔↕⥯⇌]+/,
-    _plain: $ => choice($._plain_text, $._semantic_operator, $._return_operator),
-    _plain_text: _ => /[^\s*~`«»\[\]<>⇇⇊⇈⇉↔↕⥯⇌]+/,
+    _plain: $ => choice($._plain_text, $._semantic_operator, $._return_operator, $._type_operator),
+    _plain_text: _ => /[^\s*~`«»\[\]<>⇇⇊⇈⇉↔↕⥯⇌≕]+/,
 
     _separator: _ => /(([ \t]*)\n)+/,
     _space: _ => /[ \t]+/,

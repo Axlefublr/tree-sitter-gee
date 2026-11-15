@@ -251,6 +251,21 @@ I didn't actually show you the full `rindex` example the last time, because it w
 ```
 Note that those `<size>` and `<search>` are *not* highlighted as triangles; they are raw. I just “say” them because I know what I mean, but they don't hold special meaning in *gee the language*.
 
+## type expression
+```
+≕bool
+```
+You may want to refer to a type, and it's either not attached to some argument, or the argument having a name is meaningless.
+
+```
+## draft:
+true / false
+```
+Here for example, what I actually am trying to *mean* is “the type is a boolean”.
+Trying to come up with a parameter name for this, to get type type syntax, is a bit meaningless, because the parameter is *the thing*. \
+Doing `<.>:bool` is viable and is something I sometimes do, but only makes sense when you want to reiterate “hey I'm a parameter”. Lets you mark required / optional, too. \
+But here it's just a waste of space and later mental processing. So I can just say `≕bool` and boom!
+
 ## semantic operator
 Last thing. These characters: `↔`, `↕`, `⥯`, `⇌`, `⇇`, `⇊`, `⇈`, `⇉` are highlighted specially when outside of markup. \
 As the name implies, I use these characters with specific semantics that I want to stand out on a glance.
