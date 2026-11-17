@@ -101,10 +101,10 @@ The latter looks really wrong to me and I don't want to pay the performance pric
 ```
 Unlike in markdown, you can inject syntax highlighting into *inline* code too ↓
 ```
-`puts "hi"`;crystal
+`puts "hi"`=crystal
 ```
 will get `puts "hi"` highlighted as crystal. \
-You can use either `;` or `:` depending on which feels righter to you, and the reason it's required there is that sentences like ↓ I sometimes produce.
+The reason why an explicit separator is required there is that sentences like ↓ I sometimes produce.
 ```
 you can blammo some `⇉`s in there
 ```

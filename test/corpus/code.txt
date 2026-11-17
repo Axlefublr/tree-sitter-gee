@@ -68,26 +68,8 @@ agenda **sea `bold` ttle** montreal
 ====
 code inject
 ====
-`word`;cr
-word `word`;cr word
-
----
-
-(source_file
-  (paragraph
-    (code
-      (inner_code)
-      (language_marker
-        (language_name)))
-    (code
-      (inner_code)
-      (language_marker
-        (language_name)))))
-====
-code inject colon
-====
-`word`:cr
-word `word`:cr word
+`word`=cr
+word `word`=cr word
 
 ---
 
